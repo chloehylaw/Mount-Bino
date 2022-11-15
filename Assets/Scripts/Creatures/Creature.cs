@@ -17,6 +17,7 @@ public abstract class Creature : MonoBehaviour
     [SerializeField] public int ProficiencyBonus;
     [SerializeField] public List<Action> Actions;
     [SerializeField] public List<Spell> Spells;
+    [SerializeField] public List<Status> Statuses;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +28,15 @@ public abstract class Creature : MonoBehaviour
         }
     }
     public abstract int GetArmorClass();
-
+    public abstract void Die();
+    public abstract void EnterDying();
     public abstract int GetAttackBonus();
     public abstract int GetDamageBonus();
+    internal abstract int GetInitiativeBonus();
     public abstract void TakeDamage(int damage);
     public abstract void Act(string action, Creature target);
+    public abstract void TickStatuses();
+    public abstract void StartTurn();
 
     // Update is called once per frame
     void Update()

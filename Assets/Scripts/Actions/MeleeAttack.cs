@@ -4,16 +4,29 @@ using UnityEngine;
 
 public class MeleeAttack : Action
 {
-
+    public int attack = 0;
+    public int damage = 0;
     public override void Use(Creature target)
     {
-        int attack = Dice.Roll(1, 20) + sourceCreature.GetAttackBonus();
+        attack = Dice.dice.Roll(1, 20);
+        int attackTot = attack + sourceCreature.GetAttackBonus();
         Debug.Log("Attack roll: " + attack);
-        if(attack >= target.GetArmorClass())
+        if(attack == 20)
         {
-            int t2 = Dice.Roll(1, 8) + sourceCreature.GetDamageBonus();
+            damage = Dice.dice.Roll(2, 8);
+            int t2 = damage + sourceCreature.GetDamageBonus();
+            target.TakeDamage(t2);
+        }
+        else if(attackTot >= target.GetArmorClass())
+        {
+            damage = Dice.dice.Roll(1, 8);
+            int t2 = damage + sourceCreature.GetDamageBonus();
             Debug.Log("Damage roll: " + t2);
             target.TakeDamage(t2);
+        }
+        else
+        {
+            damage = 0;
         }
     }
 
