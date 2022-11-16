@@ -83,15 +83,15 @@ public class CombatHandler : MonoBehaviour
     public static int InitiativeSorter(Initiative a, Initiative b)
     {
         if (a.score > b.score)
-            return 1;
-        else if (b.score > a.score)
             return -1;
+        else if (b.score > a.score)
+            return 1;
         else 
         {
-            if (a.creature.Dexterity > b.creature.Dexterity) return 1;
-            else if (b.creature.Dexterity > a.creature.Dexterity) return -1;
-            else if (Random.Range(0, 2) == 0) return -1;
-            else return 1;
+            if (a.creature.Dexterity > b.creature.Dexterity) return -1;
+            else if (b.creature.Dexterity > a.creature.Dexterity) return 1;
+            else if (Random.Range(0, 2) == 0) return 1;
+            else return -1;
         }
     }
 
