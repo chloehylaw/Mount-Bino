@@ -9,7 +9,6 @@ public class Initiative : MonoBehaviour
 
     private void Awake()
     {
-        score = 2;
     }
 
     public void SetScore(int s)
