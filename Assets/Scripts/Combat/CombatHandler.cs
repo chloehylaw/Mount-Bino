@@ -26,7 +26,7 @@ public class CombatHandler : MonoBehaviour
             Friendlies[Party.IndexOf(p)].creature = p;
 
         foreach (Creature p in Enemies)
-            Friendlies[Enemies.IndexOf(p)].creature = p;
+            this.Enemies[Enemies.IndexOf(p)].creature = p;
 
         round = 1;
         RollInitiative();
