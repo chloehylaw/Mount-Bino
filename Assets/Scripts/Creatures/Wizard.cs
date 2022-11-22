@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fighter : Creature
+public class Wizard : Creature
 {
     public override void Act(string action, Creature target)
-    {
-    }
-
-
-
-    public void Attack_Temp(Creature target)
     {
         this.Actions[0].Use(target);
     }
 
     public override void Die()
     {
-        Destroy(gameObject);
+        throw new System.NotImplementedException();
+    }
+
+    public override void EndTurn()
+    {
+        TickStatuses();
+        Debug.Log("Ending turn");
     }
 
     public override void EnterDying()
@@ -32,20 +32,14 @@ public class Fighter : Creature
 
     public override int GetAttackBonus()
     {
-        return Strength + ProficiencyBonus;
+        return Dexterity + ProficiencyBonus;
     }
 
     public override int GetDamageBonus()
     {
-        return Strength + 2; //Dueling
+        return Dexterity;
     }
 
-
-    public override void EndTurn()
-    {
-        TickStatuses();
-        Debug.Log("end turn");
-    }
 
     public override void TakeDamage(int damage)
     {
@@ -63,27 +57,14 @@ public class Fighter : Creature
     }
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        Strength = 4;
-        Dexterity = 1;
-        Constitution = 3;
-        Intelligence = -1;
-        Wisdom = 1;
-        Charisma = 0;
-        ArmorClass = 18;
-        MaxHealth = 49;
-        CurrentHealth = 49;
-        ProficiencyBonus = 3;
-        Name = "The Fighter";
-        //Actions = new List<Action>();
-    }
-    
 
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
