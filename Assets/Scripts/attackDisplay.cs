@@ -5,13 +5,13 @@ using TMPro;
 public class attackDisplay : MonoBehaviour
 {
     [SerializeField] public TMP_Text text;
-    [SerializeField] public MeleeAttack attack;
+    [SerializeField] public Attack attack;
     [SerializeField] public Fighter fighter;
     // Start is called before the first frame update
     void Start()
     {
         text = gameObject.GetComponent<TMP_Text>();
-        attack = (MeleeAttack)fighter.Actions[0];
+        attack = (Attack)fighter.Actions[0];
     }
 
     // Update is called once per frame

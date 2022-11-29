@@ -28,14 +28,14 @@ public class CombatHandler : MonoBehaviour
         {
             Friendlies[Party.IndexOf(p)].creature = p;
             CreatureUI[Party.IndexOf(p)].button.onClick.AddListener(p.EndTurn);
-            p.m_onStartTurn.AddListener(CreatureUI[Party.IndexOf(p)].StartTurn);
+            p.OnStartTurn += (CreatureUI[Party.IndexOf(p)].StartTurn);
         }
 
         foreach (Creature p in Enemies)
         {
             this.Enemies[Enemies.IndexOf(p)].creature = p;
             CreatureUI[Enemies.IndexOf(p)+4].button.onClick.AddListener(p.EndTurn);
-            p.m_onStartTurn.AddListener(CreatureUI[Enemies.IndexOf(p)+4].StartTurn);
+            p.OnStartTurn  += (CreatureUI[Enemies.IndexOf(p)+4].StartTurn);
         }
 
         round = 1;

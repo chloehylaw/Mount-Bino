@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class MeleeAttack : Action
+/// <summary>
+/// Weapon attacks. They use the creature's equipped weapon to determine range and damage.
+/// </summary>
+public class Attack : Action
 {
     public int attack = 0;
     public int damage = 0;

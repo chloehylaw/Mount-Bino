@@ -1,7 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public abstract class Creature : MonoBehaviour
 {
@@ -19,13 +19,11 @@ public abstract class Creature : MonoBehaviour
     [SerializeField] public List<Action> Actions;
     [SerializeField] public List<Spell> Spells;
     [SerializeField] public List<Status> Statuses;
-    public UnityEvent m_onStartTurn;
+    public event System.Action OnStartTurn;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        if (m_onStartTurn == null)
-            m_onStartTurn = new UnityEvent();
+    void Start() 
+    { 
         foreach (var action in Actions)
         {
             action.sourceCreature = this;
@@ -44,7 +42,7 @@ public abstract class Creature : MonoBehaviour
     public abstract void TickStatuses();
     public void StartTurn()
     {
-        m_onStartTurn.Invoke();
+        OnStartTurn?.Invoke();
         //TickStatuses();
     }
 
