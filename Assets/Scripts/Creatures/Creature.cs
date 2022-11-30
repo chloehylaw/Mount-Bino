@@ -5,21 +5,24 @@ using UnityEngine;
 
 public abstract class Creature : MonoBehaviour
 {
-    [SerializeField] public int Strength;
-    [SerializeField] public int Dexterity;
-    [SerializeField] public int Constitution;
-    [SerializeField] public int Intelligence;
-    [SerializeField] public int Wisdom;
-    [SerializeField] public int Charisma;
-    [SerializeField] public int ArmorClass;
-    [SerializeField] public string Name;
-    [SerializeField] public int MaxHealth;
-    [SerializeField] public int CurrentHealth;
-    [SerializeField] public int ProficiencyBonus;
-    [SerializeField] public List<Action> Actions;
-    [SerializeField] public List<Spell> Spells;
-    [SerializeField] public List<Status> Statuses;
+    public int Strength;
+    public int Dexterity;
+    public int Constitution;
+    public int Intelligence;
+    public int Wisdom;
+    public int Charisma;
+    public int ArmorClass;
+    public string Name;
+    public int MaxHealth;
+    public int CurrentHealth;
+    public int ProficiencyBonus;
+    public List<Action> Actions;
+    public List<Spell> Spells;
+    public List<Status> Statuses;
+    public Weapon EquippedWeapon;
     public event System.Action OnStartTurn;
+
+    internal abstract int GetSpellAttackBonus();
 
     // Start is called before the first frame update
     void Start() 
@@ -36,6 +39,10 @@ public abstract class Creature : MonoBehaviour
     public abstract void EndTurn();
     public abstract int GetAttackBonus();
     public abstract int GetDamageBonus();
+    internal Weapon GetWeapon()
+    {
+        return EquippedWeapon;
+    }
     internal abstract int GetInitiativeBonus();
     public abstract void TakeDamage(int damage);
     public abstract void Act(string action, Creature target);
