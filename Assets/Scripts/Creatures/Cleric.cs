@@ -57,6 +57,11 @@ public class Cleric : Creature
         return Dexterity;
     }
 
+    internal override int GetSpellAttackBonus()
+    {
+        return Wisdom + ProficiencyBonus;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

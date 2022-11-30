@@ -56,6 +56,11 @@ public class Rogue : Creature
         return Dexterity;
     }
 
+    internal override int GetSpellAttackBonus()
+    {
+        throw new System.NotImplementedException();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

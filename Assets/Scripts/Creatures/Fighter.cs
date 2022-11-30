@@ -86,4 +86,9 @@ public class Fighter : Creature
     {
         
     }
+
+    internal override int GetSpellAttackBonus()
+    {
+        throw new System.NotImplementedException();
+    }
 }
