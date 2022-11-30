@@ -19,6 +19,9 @@ public abstract class Creature : MonoBehaviour
     [SerializeField] public List<Spell> Spells;
     [SerializeField] public List<Status> Statuses;
 
+    // health bar
+    public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,8 @@ public abstract class Creature : MonoBehaviour
         {
             action.sourceCreature = this;
         }
+        // setting max health to health bar
+        healthBar.SetMaxHealth(MaxHealth);
     }
     public abstract int GetArmorClass();
     public abstract void Die();

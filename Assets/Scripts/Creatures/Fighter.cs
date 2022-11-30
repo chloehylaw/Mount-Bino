@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fighter : Creature
 {
+    
     public override void Act(string action, Creature target)
     {
     }
@@ -48,6 +49,8 @@ public class Fighter : Creature
     public override void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
+
+        healthBar.SetHealth(CurrentHealth);
     }
 
     public override void TickStatuses()
@@ -74,6 +77,7 @@ public class Fighter : Creature
         CurrentHealth = 49;
         ProficiencyBonus = 3;
         Name = "The Fighter";
+
         //Actions = new List<Action>();
     }
     
