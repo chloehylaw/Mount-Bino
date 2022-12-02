@@ -15,21 +15,32 @@ public class HealthBar : MonoBehaviour
     
     private void Start()
     {
-
-    }
-    private void Update()
-    {
-        healthText.text = creature.CurrentHealth + "/" + creature.MaxHealth;
+     
+        SetMaxHealth(creature.MaxHealth);
         creatureName.text = creature.Name;
+        creature.OnTakeDamage += TakeDamage;
     }
+
     public void SetMaxHealth(int health)
     {
+        
         slider.maxValue = health;
         slider.value = health;
+        healthText.text = creature.CurrentHealth + "/" + creature.MaxHealth;
     }
 
     public void SetHealth(int health)
     {
+        
         slider.value = health;
+        healthText.text = creature.CurrentHealth + "/" + creature.MaxHealth;
+       
+    }
+
+    public void TakeDamage(int damage)
+    {
+        slider.value -= damage;
+        healthText.text = creature.CurrentHealth + "/" + creature.MaxHealth;
+       
     }
 }

@@ -42,10 +42,10 @@ public class Cleric : Creature
 
 
 
-    public override void TakeDamage(int damage)
-    {
-        CurrentHealth -= damage;
-    }
+    //public override void TakeDamage(int damage)
+    //{
+    //    CurrentHealth -= damage;
+    //}
 
     public override void TickStatuses()
     {
@@ -68,9 +68,4 @@ public class Cleric : Creature
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

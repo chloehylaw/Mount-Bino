@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -448, y: -91}
+  m_AnchoredPosition: {x: -818, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9956365
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89308af101f9cf4baddff0f811af99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creature: {fileID: 1638119758694194337, guid: e5071fede11940d4ca70cc0c5f8b901d, type: 3}
+  creature: {fileID: 0}
 --- !u!1 &14303695
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 209, y: -91}
+  m_AnchoredPosition: {x: 363, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152668564
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89308af101f9cf4baddff0f811af99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creature: {fileID: 1032927421062975991, guid: 642e7d03abb44f641ace90f57b12217c, type: 3}
+  creature: {fileID: 0}
 --- !u!1 &225878726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,7 +1269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 333, y: -91}
+  m_AnchoredPosition: {x: 599, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &443866619
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89308af101f9cf4baddff0f811af99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creature: {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
+  creature: {fileID: 0}
 --- !u!1 &619169042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,7 +1909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -322, y: -91}
+  m_AnchoredPosition: {x: -635, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1018196727
@@ -1924,7 +1924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89308af101f9cf4baddff0f811af99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creature: {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
+  creature: {fileID: 0}
 --- !u!1 &1117044612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,14 +2398,15 @@ MonoBehaviour:
   Initiatives: []
   currentInitiative: {fileID: 0}
   CreatureUI:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 247807971}
+  - {fileID: 1117044617}
+  - {fileID: 2023248891}
+  - {fileID: 131002138}
+  - {fileID: 1527209064}
+  - {fileID: 30045863}
+  - {fileID: 225878731}
+  - {fileID: 2100128336}
+  healthBar: {fileID: 2122396466022557654, guid: 60adbcc1adf7eda438e731cd60c7e0a0, type: 3}
 --- !u!4 &1558655642
 Transform:
   m_ObjectHideFlags: 0
@@ -2674,7 +2675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83, y: -91}
+  m_AnchoredPosition: {x: 152, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812924893
@@ -2724,7 +2725,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -74, y: -91}
+  m_AnchoredPosition: {x: -144, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836431048
@@ -2896,14 +2897,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Party:
   - {fileID: 1251229256597412481, guid: b82e0da2c336b8348850889acdef464b, type: 3}
-  - {fileID: 1032927421062975991, guid: 642e7d03abb44f641ace90f57b12217c, type: 3}
-  - {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
   - {fileID: 1638119758694194337, guid: e5071fede11940d4ca70cc0c5f8b901d, type: 3}
+  - {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
+  - {fileID: 1032927421062975991, guid: 642e7d03abb44f641ace90f57b12217c, type: 3}
   Enemies:
-  - {fileID: 1638119758694194337, guid: e5071fede11940d4ca70cc0c5f8b901d, type: 3}
   - {fileID: 1032927421062975991, guid: 642e7d03abb44f641ace90f57b12217c, type: 3}
-  - {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
   - {fileID: 1251229256597412481, guid: b82e0da2c336b8348850889acdef464b, type: 3}
+  - {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
+  - {fileID: 1638119758694194337, guid: e5071fede11940d4ca70cc0c5f8b901d, type: 3}
+  Fighter: {fileID: 1251229256597412481, guid: b82e0da2c336b8348850889acdef464b, type: 3}
+  Rogue: {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
+  Wizard: {fileID: 1638119758694194337, guid: e5071fede11940d4ca70cc0c5f8b901d, type: 3}
+  Cleric: {fileID: 1032927421062975991, guid: 642e7d03abb44f641ace90f57b12217c, type: 3}
 --- !u!4 &1978703012
 Transform:
   m_ObjectHideFlags: 0
@@ -3089,7 +3094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -198, y: -91}
+  m_AnchoredPosition: {x: -377, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032155114
@@ -3104,7 +3109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89308af101f9cf4baddff0f811af99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creature: {fileID: 1032927421062975991, guid: 642e7d03abb44f641ace90f57b12217c, type: 3}
+  creature: {fileID: 0}
 --- !u!1 &2077422797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,7 +3139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89308af101f9cf4baddff0f811af99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creature: {fileID: 1638119758694194337, guid: e5071fede11940d4ca70cc0c5f8b901d, type: 3}
+  creature: {fileID: 0}
 --- !u!224 &2077422799
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3152,7 +3157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: -91}
+  m_AnchoredPosition: {x: 836, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2100128331

@@ -48,12 +48,12 @@ public class Fighter : Creature
         Debug.Log("end turn");
     }
 
-    public override void TakeDamage(int damage)
-    {
-        CurrentHealth -= damage;
+    //public void TakeDamage(int damage)
+    //{
+        
 
-        healthBar.SetHealth(CurrentHealth);
-    }
+    
+    //}
 
     public override void TickStatuses()
     {
@@ -85,11 +85,7 @@ public class Fighter : Creature
     
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     internal override int GetSpellAttackBonus()
     {
