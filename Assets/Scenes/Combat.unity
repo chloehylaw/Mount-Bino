@@ -628,6 +628,7 @@ MonoBehaviour:
   round: 0
   Initiatives: []
   currentInitiative: {fileID: 0}
+  healthBar: {fileID: 2122396466022557656, guid: 60adbcc1adf7eda438e731cd60c7e0a0, type: 3}
 --- !u!4 &1558655642
 Transform:
   m_ObjectHideFlags: 0

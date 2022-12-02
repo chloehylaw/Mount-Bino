@@ -11,6 +11,8 @@ public class CombatHandler : MonoBehaviour
     public List<Initiative> Initiatives = new();
     public Initiative currentInitiative;
 
+    public HealthBar healthBar;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +25,23 @@ public class CombatHandler : MonoBehaviour
     public void StartCombat(List<Creature> Party, List<Creature> Enemies)
     {
         foreach (Creature p in Party)
+        {
             Friendlies[Party.IndexOf(p)].creature = p;
+            Instantiate(healthBar, p.transform);
+            healthBar.transform.Translate(new Vector2(0,-10));
+            healthBar.creature = p;
+        }
+            
+            
 
         foreach (Creature p in Enemies)
+        {
             Friendlies[Enemies.IndexOf(p)].creature = p;
+            Instantiate(healthBar, p.transform);
+            healthBar.transform.Translate(new Vector2(0, -10));
+            healthBar.creature = p;
+        }
+            
 
         round = 1;
         RollInitiative();
