@@ -21,8 +21,11 @@ public abstract class Creature : MonoBehaviour
     public List<Status> Statuses;
     public Weapon EquippedWeapon;
     public event System.Action OnStartTurn;
+    public event System.Action<int> OnTakeDamage;
 
     internal abstract int GetSpellAttackBonus();
+
+    
 
     // Start is called before the first frame update
     void Start() 
@@ -32,6 +35,7 @@ public abstract class Creature : MonoBehaviour
             action.sourceCreature = this;
         }
 
+        
     }
     public abstract int GetArmorClass();
     public abstract void Die();
@@ -44,7 +48,11 @@ public abstract class Creature : MonoBehaviour
         return EquippedWeapon;
     }
     internal abstract int GetInitiativeBonus();
-    public abstract void TakeDamage(int damage);
+    public void TakeDamage(int damage)
+    {
+        CurrentHealth -= damage;
+        OnTakeDamage?.Invoke(damage);
+    }
     public abstract void Act(string action, Creature target);
     public abstract void TickStatuses();
     public void StartTurn()
@@ -58,6 +66,10 @@ public abstract class Creature : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(Dice.dice.Roll(2,8));
+            
+        }
     }
 }
