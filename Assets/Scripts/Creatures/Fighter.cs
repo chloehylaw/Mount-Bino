@@ -40,9 +40,11 @@ public class Fighter : Creature
         return Strength + 2; //Dueling
     }
 
-    public override void StartTurn()
+
+    public override void EndTurn()
     {
-        throw new System.NotImplementedException();
+        TickStatuses();
+        Debug.Log("end turn");
     }
 
     public override void TakeDamage(int damage)
@@ -83,5 +85,10 @@ public class Fighter : Creature
     void Update()
     {
         
+    }
+
+    internal override int GetSpellAttackBonus()
+    {
+        throw new System.NotImplementedException();
     }
 }

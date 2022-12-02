@@ -4,9 +4,13 @@ using UnityEngine;
 
 public abstract class Status : MonoBehaviour
 {
-    public int duration; //in seconds
-    public int currentTime;
-    public string statusName;
+    public int Duration; //in seconds
+    public int CurrentTime;
+    public string StatusName;
+    public List<Creature> AffectedCreature;
+    public Creature SourceCreature;
+    public bool Concentration;
+
 
     public abstract void Tick();
     public abstract void EndStatus();
