@@ -7,7 +7,7 @@ public class CombatButton : MonoBehaviour
     public UnityEngine.UI.Button button;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         button = gameObject.GetComponent<UnityEngine.UI.Button>();
     }

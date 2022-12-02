@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fighter : Creature
 {
+    
     public override void Act(string action, Creature target)
     {
     }
@@ -47,10 +48,12 @@ public class Fighter : Creature
         Debug.Log("end turn");
     }
 
-    public override void TakeDamage(int damage)
-    {
-        CurrentHealth -= damage;
-    }
+    //public void TakeDamage(int damage)
+    //{
+        
+
+    
+    //}
 
     public override void TickStatuses()
     {
@@ -76,16 +79,13 @@ public class Fighter : Creature
         CurrentHealth = 49;
         ProficiencyBonus = 3;
         Name = "The Fighter";
+
         //Actions = new List<Action>();
     }
     
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     internal override int GetSpellAttackBonus()
     {
