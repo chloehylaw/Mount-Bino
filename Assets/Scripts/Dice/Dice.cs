@@ -17,9 +17,17 @@ public class Dice : MonoBehaviour
     {
         dice = gameObject.GetComponent<Dice>();
     }
-    public int Roll(int amount, int size)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <param name="size"></param>
+    /// <param name="adv"> Optional, positive for advantage, negative for disadvantage</param>
+    /// <returns></returns>
+    public int Roll(int amount, int size, int adv = 0) 
     {
         int temp = 0;
+        int advTemp = 0;
         lastAmount = amount;
         lastSize = size;
         diceList.Clear();
@@ -32,6 +40,18 @@ public class Dice : MonoBehaviour
             temp += t;
             //text.text += t + " ";
         }
+
+        if (adv != 0)
+        {
+            int t = Random.Range(1, size + 1);
+            diceList.Add(t);
+            advTemp += t;
+        }
+
+        if (adv > 0)
+            temp = Mathf.Max(temp, advTemp);
+        else if (adv < 0)
+            temp = Mathf.Min(temp, advTemp);
         Debug.Log(temp);
         diceRolled.Invoke();
         //text.text += " = " + temp;

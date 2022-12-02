@@ -10,6 +10,7 @@ public class CombatHandler : MonoBehaviour
     public int round;
     public List<Initiative> Initiatives = new();
     public Initiative currentInitiative;
+    public List<CombatButton> CreatureUI;
 
     public HealthBar healthBar;
     
@@ -24,29 +25,26 @@ public class CombatHandler : MonoBehaviour
 
     public void StartCombat(List<Creature> Party, List<Creature> Enemies)
     {
+        CreatureUI = new List<CombatButton>(FindObjectsOfType<CombatButton>());
         foreach (Creature p in Party)
         {
             Friendlies[Party.IndexOf(p)].creature = p;
-            Instantiate(healthBar, p.transform);
-            healthBar.transform.Translate(new Vector2(0,-10));
-            healthBar.creature = p;
+            CreatureUI[Party.IndexOf(p)].button.onClick.AddListener(p.EndTurn);
+            p.OnStartTurn += (CreatureUI[Party.IndexOf(p)].StartTurn);
         }
-            
-            
 
         foreach (Creature p in Enemies)
         {
-            Friendlies[Enemies.IndexOf(p)].creature = p;
-            Instantiate(healthBar, p.transform);
-            healthBar.transform.Translate(new Vector2(0, -10));
-            healthBar.creature = p;
+            this.Enemies[Enemies.IndexOf(p)].creature = p;
+            CreatureUI[Enemies.IndexOf(p)+4].button.onClick.AddListener(p.EndTurn);
+            p.OnStartTurn  += (CreatureUI[Enemies.IndexOf(p)+4].StartTurn);
         }
-            
 
         round = 1;
         RollInitiative();
         currentInitiative = Initiatives[0];
         currentInitiative.creature.StartTurn();
+
     }
 
     // Update is called once per frame
