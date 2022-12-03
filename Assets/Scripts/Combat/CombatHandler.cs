@@ -10,28 +10,47 @@ public class CombatHandler : MonoBehaviour
     public int round;
     public List<Initiative> Initiatives = new();
     public Initiative currentInitiative;
+    public List<CombatButton> CreatureUI;
 
+    public HealthBar healthBar;
+    
     // Start is called before the first frame update
     void Start()
     {
         combatHandler = GetComponent<CombatHandler>();
-        var tmp = new List<Creature>{ Friendlies[0], Friendlies[1], Friendlies[2], Friendlies[3] };
-        var tmp2 = new List<Creature>{ Enemies[0], Enemies[1], Enemies[2], Enemies[3] };
-        StartCombat(tmp, tmp2);
+        
+        
     }
 
     public void StartCombat(List<Creature> Party, List<Creature> Enemies)
     {
+        
         foreach (Creature p in Party)
+        {
             Friendlies[Party.IndexOf(p)].creature = p;
+            CreatureUI[Party.IndexOf(p)].button.onClick.AddListener(p.EndTurn);
+            p.OnStartTurn += (CreatureUI[Party.IndexOf(p)].StartTurn);
+
+            var temp = Instantiate(healthBar, Friendlies[Party.IndexOf(p)].transform);
+            temp.transform.Translate(new Vector2(0, 0));
+            temp.creature = p;
+        }
 
         foreach (Creature p in Enemies)
-            Friendlies[Enemies.IndexOf(p)].creature = p;
+        {
+            this.Enemies[Enemies.IndexOf(p)].creature = p;
+            CreatureUI[Enemies.IndexOf(p)+4].button.onClick.AddListener(p.EndTurn);
+            p.OnStartTurn  += (CreatureUI[Enemies.IndexOf(p)+4].StartTurn);
+            var temp = Instantiate(healthBar, this.Enemies[Enemies.IndexOf(p)].transform);
+            temp.transform.Translate(new Vector2(0, 0));
+            temp.creature = p;
+        }
 
         round = 1;
         RollInitiative();
         currentInitiative = Initiatives[0];
         currentInitiative.creature.StartTurn();
+
     }
 
     // Update is called once per frame
