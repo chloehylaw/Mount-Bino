@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Map
 {
@@ -62,7 +63,7 @@ namespace Map
         private static void EnterNode(MapNode mapNode)
         {
             // we have access to blueprint name here as well
-            Debug.Log("Entering node: " + mapNode.Node.blueprintName + " of type: " + mapNode.Node.nodeType);
+            Debug.Log("Entering node: " + mapNode.Node.blueprintName);
             // load appropriate scene with context based on nodeType:
             // or show appropriate GUI over the map: 
             // if you choose to show GUI in some of these cases, do not forget to set "Locked" in MapPlayerTracker back to false
@@ -73,10 +74,12 @@ namespace Map
                 case NodeType.EliteEnemy:
                     break;
                 case NodeType.RestSite:
+                    SceneManager.LoadScene("RestSite");
                     break;
                 case NodeType.Boss:
                     break;
                 case NodeType.RandomEvent:
+                    SceneManager.LoadScene("RandomEvent");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

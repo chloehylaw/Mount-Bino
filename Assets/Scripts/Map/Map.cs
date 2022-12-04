@@ -42,11 +42,11 @@ namespace Map
 
 		public string ToJson()
 		{
-			//return JsonConvert.SerializeObject(this, Formatting.Indented);
-			return JsonConvert.SerializeObject(this, new JsonSerializerSettings() 
+			return JsonConvert.SerializeObject(this, Formatting.Indented);
+			/*return JsonConvert.SerializeObject(this, new JsonSerializerSettings() 
 			{ 
 				ReferenceLoopHandling = ReferenceLoopHandling.Ignore 
-			});
+			});*/
 		}
 	}
 }

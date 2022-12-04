@@ -9,7 +9,6 @@ namespace Map
 		public MapConfig config;
 		public MapView view;
 		
-		[Newtonsoft.Json.JsonIgnore]
 		public Map CurrentMap { get; private set; }
 
 		private void Start()
@@ -41,7 +40,7 @@ namespace Map
 		{
 			var map = MapGenerator.GetMap(config);
 			CurrentMap = map;
-			Debug.Log(map.ToJson());
+			// Debug.Log(map.ToJson());
 			view.ShowMap(map);
 		}
 
