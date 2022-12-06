@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Dice;
 
 public class CombatHandler : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class CombatHandler : MonoBehaviour
     public List<Initiative> Initiatives = new();
     public Initiative currentInitiative;
     public List<CombatButton> CreatureUI;
+    public DieExpression dieExpression;
+    public int ticker = 0;
 
     public HealthBar healthBar;
     
@@ -54,9 +57,11 @@ public class CombatHandler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        ticker++;
+        if (ticker % 100 == 0)
+            Debug.Log((int)new DieExpression("3d10+4-5d8-3-4+1d6"));
     }
 
     public void AdvanceTurn()
