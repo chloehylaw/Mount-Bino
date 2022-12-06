@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Dice;
 
 public abstract class Creature : MonoBehaviour
 {
@@ -22,6 +23,26 @@ public abstract class Creature : MonoBehaviour
     public Weapon EquippedWeapon;
     public event System.Action OnStartTurn;
     public event System.Action<int> OnTakeDamage;
+
+    public int StatusEffectStrengthCheckAdvantage;
+    public int StatusEffectDexterityCheckAdvantage;
+    public int StatusEffectConstitutionCheckAdvantage;
+    public int StatusEffectIntelligenceCheckAdvantage;
+    public int StatusEffectWisdomCheckAdvantage;
+    public int StatusEffectCharismaCheckAdvantage;
+    public int StatusEffectStrengthSaveAdvantage;
+    public int StatusEffectDexteritySaveAdvantage;
+    public int StatusEffectConstitutionSaveAdvantage;
+    public int StatusEffectIntelligenceSaveAdvantage;
+    public int StatusEffectWisdomSaveAdvantage;
+    public int StatusEffectCharismaSaveAdvantage;
+    public int StatusEffectCheckAdvantage;
+    public int StatusEffectAttackAdvantage;
+    public int StatusEffectSaveAdvantage;
+    public DieExpression StatusEffectCheckBonus;
+    public DieExpression StatusEffectAttackBonus;
+    public DieExpression StatusEffectSaveBonus;
+
 
     internal abstract int GetSpellAttackBonus();
 
