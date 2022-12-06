@@ -17,7 +17,6 @@ public class Rogue : Creature
     public override void EndTurn()
     {
         TickStatuses();
-        Debug.Log("Ending turn");
     }
 
     public override void EnterDying()
