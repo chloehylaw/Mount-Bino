@@ -23,4 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CultistLevelBattle.unity
     guid: c37eb8fd13d3eaa4ab9711c2c300470e
+    path: Assets/Scenes/Combat.unity
+    guid: 19e1c0cb971fa0b4e957e5757361ab3c
   m_configObjects: {}

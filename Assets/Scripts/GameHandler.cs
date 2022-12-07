@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using RandomEvents;
-using RandomEvents;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,12 +15,12 @@ public class GameHandler : MonoBehaviour
     public Creature Wizard;
     public Creature Cleric;
     
-    public List<CombatEncounter> minorEnemyEncounters;
-    public List<CombatEncounter> eliteEnemyEncounters;
-    public List<CombatEncounter> specialistEnemyEncounters;
-    public List<CombatEncounter> bossEnemyEncounters;
+    public List<string> minorEnemyEncounters;
+    public List<string> eliteEnemyEncounters;
+    public List<string> specialistEnemyEncounters;
+    public List<string> bossEnemyEncounters;
 
-    public List<RandomEventEncounter> eventEncounters;
+    public List<string> eventEncounters;
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +38,14 @@ public class GameHandler : MonoBehaviour
         CombatHandler.combatHandler.StartCombat(Party, Enemies);
     }
 
-    public void enterCombatScene (List<Creature> enemies)
+    public void enterCombatScene (string enemies)
     {
-        Enemies = enemies;
+        Debug.Log(enemies);
+        CombatEncounter encounter = Resources.Load<CombatEncounter>(enemies);
+        Enemies = encounter;
+        Debug.Log(Enemies.ToString());
         SceneManager.LoadScene("Combat");
-        CombatHandler.combatHandler.StartCombat(Party, Enemies);
+        //CombatHandler.combatHandler.StartCombat(Party, Enemies);
     }
 
     public void enterRestScene ()

@@ -13,6 +13,12 @@ public class Wizard : Creature
     {
 
     }
+    public override void FreeAct(string freeAction, Creature target)
+    {
+    }
+    public override void EndTurnAct(string endTurnAction, Creature target)
+    {
+    }
 
     public override void Die()
     {

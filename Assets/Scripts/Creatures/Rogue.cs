@@ -14,6 +14,12 @@ public class Rogue : Creature
     {
 
     }
+    public override void FreeAct(string freeAction, Creature target)
+    {
+    }
+    public override void EndTurnAct(string endTurnAction, Creature target)
+    {
+    }
     public override void Die()
     {
         throw new System.NotImplementedException();
