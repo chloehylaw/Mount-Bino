@@ -21,6 +21,7 @@ namespace RandomEvents
         
         private string gameObjectName;
         
+        
         public void Start ()
         {
             gameObjectName = gameObject.name;
@@ -72,6 +73,8 @@ namespace RandomEvents
         public void selectFighter ()
         {
             // Get Fighter status
+            
+            
         }
 
         public void selectRogue ()

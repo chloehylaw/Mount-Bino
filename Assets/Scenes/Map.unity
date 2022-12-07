@@ -2135,12 +2135,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8316d9fde45f3f48bf7e22f63fe1cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Party: []
-  Enemies: []
-  Fighter: {fileID: 0}
-  Rogue: {fileID: 0}
-  Wizard: {fileID: 0}
-  Cleric: {fileID: 0}
+  Party:
+  - {fileID: 1251229256597412481, guid: b82e0da2c336b8348850889acdef464b, type: 3}
+  - {fileID: 1638119758694194337, guid: e5071fede11940d4ca70cc0c5f8b901d, type: 3}
+  - {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
+  - {fileID: 1032927421062975991, guid: 642e7d03abb44f641ace90f57b12217c, type: 3}
+  Enemies:
+  - {fileID: 1032927421062975991, guid: 642e7d03abb44f641ace90f57b12217c, type: 3}
+  - {fileID: 1251229256597412481, guid: b82e0da2c336b8348850889acdef464b, type: 3}
+  - {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
+  - {fileID: 1638119758694194337, guid: e5071fede11940d4ca70cc0c5f8b901d, type: 3}
+  Fighter: {fileID: 1251229256597412481, guid: b82e0da2c336b8348850889acdef464b, type: 3}
+  Rogue: {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
+  Wizard: {fileID: 1638119758694194337, guid: e5071fede11940d4ca70cc0c5f8b901d, type: 3}
+  Cleric: {fileID: 1032927421062975991, guid: 642e7d03abb44f641ace90f57b12217c, type: 3}
+  minorEnemyEncounters:
+  - {fileID: 8042147270459653332, guid: c45a81071b0a53d49a07775c76ca8a81, type: 3}
+  eliteEnemyEncounters:
+  - {fileID: 8042147270459653332, guid: 2803acb828685cb4eb60bc6177ad0e22, type: 3}
+  specialistEnemyEncounters:
+  - {fileID: 8042147270459653332, guid: 08dc12cf316cb1146bbb3cb718da46a3, type: 3}
+  bossEnemyEncounters:
+  - {fileID: 8042147270459653332, guid: 0586ddd0ff4b7394780575bc3baa130b, type: 3}
+  eventEncounters:
+  - {fileID: 6761771464665271757, guid: e26c294db92b0a649a0d8bfefe59793f, type: 3}
 --- !u!4 &971086037
 Transform:
   m_ObjectHideFlags: 0
