@@ -71,4 +71,14 @@ public class Demon : Creature
     {
         return Intelligence + ProficiencyBonus;
     }
+
+    public override void FreeAct(string bonusAction, Creature target)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void EndTurnAct(string bonusAction, Creature target)
+    {
+        throw new System.NotImplementedException();
+    }
 }
