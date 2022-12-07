@@ -95,7 +95,7 @@ namespace Map
                 }
                 if (nodeType == NodeType.RandomEvent)
                 {
-                    
+                    node.events = GameHandler.gameHandler.eventEncounters[Random.Range(0, GameHandler.gameHandler.eventEncounters.Count)];
                 }
 
                 nodesOnThisLayer.Add(node);
