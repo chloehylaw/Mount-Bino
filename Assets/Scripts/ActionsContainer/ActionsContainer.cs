@@ -13,6 +13,7 @@ public class ActionsContainer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.enabled = true;
         StartCoroutine(Ligma());
         // subscribe to event in combat handler 
         // public event Action<Creature> OnStartTurn -> in combat handler
@@ -33,7 +34,7 @@ public class ActionsContainer : MonoBehaviour
         {
             if (a != this)
             {
-                width += a.GetComponent<RectTransform>().sizeDelta.x + 50;
+                width += a.GetComponent<RectTransform>().sizeDelta.x + 25;
             }
 
         }

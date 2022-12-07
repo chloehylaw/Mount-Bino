@@ -35,7 +35,7 @@ public class GameHandler : MonoBehaviour
         Enemies[1] = Instantiate(Rogue);
         Enemies[2] = Instantiate(Wizard);
         Enemies[3] = Instantiate(Cleric);
-        //CombatHandler.combatHandler.StartCombat(Party, Enemies);
+        CombatHandler.combatHandler.StartCombat(Party, Enemies);
     }
 
     public void enterCombatScene (string enemies)
@@ -45,7 +45,7 @@ public class GameHandler : MonoBehaviour
         Enemies = encounter;
         Debug.Log(Enemies.ToString());
         SceneManager.LoadScene("Combat");
-        CombatHandler.combatHandler.StartCombat(Party, Enemies);
+        //CombatHandler.combatHandler.StartCombat(Party, Enemies);
     }
 
     public void enterRestScene ()
