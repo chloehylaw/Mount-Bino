@@ -16,8 +16,8 @@ namespace Map
 		public readonly NodeType nodeType;
 		public readonly string blueprintName;
 		public Vector2 position;
-		public List<Creature> enemies;
-		public List<RandomEvent> events;
+		public string enemies;
+		public string events;
 
 		public Node(NodeType nodeType, string blueprintName, Point point)
 		{
