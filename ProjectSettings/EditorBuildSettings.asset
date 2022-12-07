@@ -15,14 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Options.unity
     guid: 14641382d5994d347a9ff0f39b823aa5
   - enabled: 1
-    path: Assets/Scenes/CultistLevelBattle.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-    path: Assets/Scenes/RestSite.unity
-    guid: 35aa2877b3a94474892ddf8c64a768f7
-  - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 1cdbe34676f3eb040825da34320567ca
   - enabled: 1
     path: Assets/Scenes/RandomEvent.unity
     guid: 4097cb962c1bad04ea69ee2455f5014c
+  - enabled: 1
+    path: Assets/Scenes/CultistLevelBattle.unity
+    guid: c37eb8fd13d3eaa4ab9711c2c300470e
   m_configObjects: {}
