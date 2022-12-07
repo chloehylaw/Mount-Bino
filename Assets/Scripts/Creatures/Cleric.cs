@@ -21,48 +21,27 @@ public class Cleric : Creature
         throw new System.NotImplementedException();
     }
 
-    public override void EndTurn()
-    {
-        TickStatuses();
-        Debug.Log("Ending turn");
-    }
 
     public override void EnterDying()
     {
         throw new System.NotImplementedException();
     }
 
-    public override int GetArmorClass()
-    {
-        return ArmorClass;
-    }
-
-    public override int GetAttackBonus()
-    {
-        return Strength + ProficiencyBonus;
-    }
 
     public override int GetDamageBonus()
     {
         return Strength;
     }
 
-
+    public new int GetSpellSaveDC()
+    {
+        return 8 + Wisdom + ProficiencyBonus;
+    }
 
     //public override void TakeDamage(int damage)
     //{
     //    CurrentHealth -= damage;
     //}
-
-    public override void TickStatuses()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    internal override int GetInitiativeBonus()
-    {
-        return Dexterity;
-    }
 
     internal override int GetSpellAttackBonus()
     {
