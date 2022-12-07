@@ -86,11 +86,11 @@ namespace Map
                     GroupXP.groupXPValue += 4400;
                     break;
                 case NodeType.RestSite:
-                    //GameHandler.gameHandler.enterRestScene(); 
+                    GameHandler.gameHandler.enterRestScene();
                     break;
                 case NodeType.RandomEvent:
                     GroupXP.groupXPValue += 1000;
-                    GameHandler.gameHandler.enterEventScene();
+                    GameHandler.gameHandler.enterEventScene(mapNode.Node.events);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

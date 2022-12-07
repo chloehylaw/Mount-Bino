@@ -2158,7 +2158,14 @@ MonoBehaviour:
   bossEnemyEncounters:
   - EnemyEncounters/BossEnemyEncounters
   eventEncounters:
-  - RandomEventEncounters/RandomEvent_01
+  - RandomEventEncounters/RandomEvent_0
+  - RandomEventEncounters/RandomEvent_1
+  - RandomEventEncounters/RandomEvent_2
+  - RandomEventEncounters/RandomEvent_3
+  - RandomEventEncounters/RandomEvent_4
+  - RandomEventEncounters/RandomEvent_5
+  - RandomEventEncounters/RandomEvent_6
+  - RandomEventEncounters/RandomEvent_7
 --- !u!4 &971086037
 Transform:
   m_ObjectHideFlags: 0
@@ -2898,6 +2905,57 @@ Transform:
   - {fileID: 1931721575}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1738417712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1738417714}
+  - component: {fileID: 1738417713}
+  m_Layer: 0
+  m_Name: Dice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1738417713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738417712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf61ea62be4ebf24e81128b5750bf3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceList: 
+  lastAmount: 0
+  lastSize: 0
+  lastSum: 0
+  diceRolled:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1738417714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738417712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.114093, y: 0.61688364, z: 6.2509828}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1931721571
 GameObject:

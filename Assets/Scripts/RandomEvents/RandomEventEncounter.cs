@@ -4,6 +4,7 @@ namespace RandomEvents
 {
     public class RandomEventEncounter : MonoBehaviour
     {
-        public List<RandomEvent> events;
+        public RandomEvent events;
+        public static implicit operator RandomEvent (RandomEventEncounter A) => A.events;
     }
 }

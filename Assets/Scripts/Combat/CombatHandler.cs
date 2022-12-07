@@ -29,13 +29,15 @@ public class CombatHandler : MonoBehaviour
 
     public void StartCombat(List<Creature> Party, List<Creature> Enemies)
     {
-        
         foreach (Creature p in Party)
         {
-            Friendlies[Party.IndexOf(p)].creature = p;
-            CreatureUI[Party.IndexOf(p)].button.onClick.AddListener(p.EndTurn);
-            p.OnStartTurn += (CreatureUI[Party.IndexOf(p)].StartTurn);
-
+            Friendlies[Party.IndexOf(p)].creature = Instantiate(p, Friendlies[Party.IndexOf(p)].transform);
+            Friendlies[Party.IndexOf(p)].gameObject.SetActive(true);
+            CreatureUI[Party.IndexOf(p)].button.onClick.AddListener(Friendlies[Party.IndexOf(p)].creature.EndTurn);
+            Friendlies[Party.IndexOf(p)].creature.OnStartTurn += (CreatureUI[Party.IndexOf(p)].StartTurn);
+            Friendlies[Party.IndexOf(p)].creature.OnEndTurn += AdvanceTurn;
+            Friendlies[Party.IndexOf(p)].creature.GetComponent<SpriteRenderer>().enabled = true;
+            Friendlies[Party.IndexOf(p)].creature.transform.localScale = new Vector3(38,38,1);
             var temp = Instantiate(healthBar, Friendlies[Party.IndexOf(p)].transform);
             temp.transform.Translate(new Vector2(0, 0));
             temp.creature = p;
@@ -43,9 +45,13 @@ public class CombatHandler : MonoBehaviour
 
         foreach (Creature p in Enemies)
         {
-            this.Enemies[Enemies.IndexOf(p)].creature = p;
-            CreatureUI[Enemies.IndexOf(p)+4].button.onClick.AddListener(p.EndTurn);
-            p.OnStartTurn  += (CreatureUI[Enemies.IndexOf(p)+4].StartTurn);
+            this.Enemies[Enemies.IndexOf(p)].creature = Instantiate(p, this.Enemies[Enemies.IndexOf(p)].transform);
+            this.Enemies[Enemies.IndexOf(p)].gameObject.SetActive(true);
+            CreatureUI[Enemies.IndexOf(p)+4].button.onClick.AddListener(this.Enemies[Enemies.IndexOf(p)].creature.EndTurn);
+            this.Enemies[Enemies.IndexOf(p)].creature.OnStartTurn  += (CreatureUI[Enemies.IndexOf(p)+4].StartTurn);
+            this.Enemies[Enemies.IndexOf(p)].creature.OnEndTurn += AdvanceTurn;
+            this.Enemies[Enemies.IndexOf(p)].creature.GetComponent<SpriteRenderer>().enabled = true;
+            this.Enemies[Enemies.IndexOf(p)].creature.transform.localScale = new Vector3(38, 38, 1);
             var temp = Instantiate(healthBar, this.Enemies[Enemies.IndexOf(p)].transform);
             temp.transform.Translate(new Vector2(0, 0));
             temp.creature = p;
@@ -68,6 +74,7 @@ public class CombatHandler : MonoBehaviour
 
     public void AdvanceTurn()
     {
+        Debug.Log("Starting turn for " + currentInitiative.creature.Name);
         int temp = Initiatives.IndexOf(currentInitiative);
         if(temp == Initiatives.Count - 1)
         {
@@ -85,21 +92,28 @@ public class CombatHandler : MonoBehaviour
 
         foreach (CreatureSlot c in Friendlies)
         {
-            var t = gameObject.AddComponent<Initiative>();
-            t.creature = c;
-            t.score =
-                Dice.dice.Roll(1, 20) + 
-                c.creature.GetInitiativeBonus(); 
+            if (c.gameObject.activeSelf)
+            {
+
+                var t = gameObject.AddComponent<Initiative>();
+                t.creature = c;
+                t.score =
+                    Dice.dice.Roll(1, 20) + 
+                    c.creature.GetInitiativeBonus(); 
                 
-            Initiatives.Add(t);
+                Initiatives.Add(t);
+            }
         }
 
         foreach (CreatureSlot c in Enemies)
         {
-            var t = gameObject.AddComponent<Initiative>();
-            t.creature = c;
-            t.score = Dice.dice.Roll(1, 20) + c.creature.GetInitiativeBonus();
-            Initiatives.Add(t);
+            if (c.gameObject.activeSelf)
+            {
+                var t = gameObject.AddComponent<Initiative>();
+                t.creature = c;
+                t.score = Dice.dice.Roll(1, 20) + c.creature.GetInitiativeBonus();
+                Initiatives.Add(t);
+            }
         }
 
         Initiatives.Sort(InitiativeSorter);
