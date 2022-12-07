@@ -16,9 +16,11 @@ public class CombatHandler : MonoBehaviour
     public int ticker = 0;
 
     public HealthBar healthBar;
+
+    public event System.Action<Creature> OnStartTurn;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         combatHandler = GetComponent<CombatHandler>();
         
@@ -53,7 +55,7 @@ public class CombatHandler : MonoBehaviour
         RollInitiative();
         currentInitiative = Initiatives[0];
         currentInitiative.creature.StartTurn();
-
+        OnStartTurn.Invoke(currentInitiative.creature);
     }
 
     // Update is called once per frame
@@ -74,7 +76,7 @@ public class CombatHandler : MonoBehaviour
         }
         else currentInitiative = Initiatives[temp+1];
         currentInitiative.creature.StartTurn();
-
+        OnStartTurn.Invoke(currentInitiative.creature);
     }
 
     public void RollInitiative()

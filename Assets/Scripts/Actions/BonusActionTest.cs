@@ -1,16 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-public class TurnDisplay : MonoBehaviour
+public class BonusActionTest : BonusAction
 {
-    public TextMeshProUGUI creatureName;
-
-    public Creature creature;
-
-    public CombatHandler combatHandler;
+    public override void Use(Creature target)
+    {
+        throw new System.NotImplementedException();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +17,6 @@ public class TurnDisplay : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    public void DisplayCreatureTurn()
     {
         
     }

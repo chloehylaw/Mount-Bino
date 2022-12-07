@@ -9,6 +9,13 @@ public class Cleric : Creature
         this.Actions[0].Use(target);
     }
 
+    public override void BonusAct(string bonusAction, Creature target)
+    {
+
+    }
+
+
+
     public override void Die()
     {
         throw new System.NotImplementedException();

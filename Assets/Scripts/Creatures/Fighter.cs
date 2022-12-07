@@ -9,6 +9,9 @@ public class Fighter : Creature
     {
     }
 
+    public override void BonusAct(string bonusAction, Creature target)
+    {
+    }
 
 
     public void Attack_Temp(Creature target)
