@@ -63,6 +63,23 @@ public class GameHandler : MonoBehaviour
         CombatHandler.combatHandler.StartCombat(Party, Enemies);
     }
 
+    public void enterEventScene (string eventPath)
+    {
+        Debug.Log(eventPath);
+        
+        SceneManager.LoadScene("RandomEvent");
+        StartCoroutine(StartEventAfterSceneLoad(eventPath));
+    }
+
+    public IEnumerator StartEventAfterSceneLoad (string eventPath)
+    {
+        while (!SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("RandomEvent")))
+        { 
+            yield return null;
+        }
+        RandomEventHandler.randomEventHandler.StartEvent(eventPath);
+    }
+    
     public void enterRestScene ()
     {
         SceneManager.LoadScene("RestSite"); 
