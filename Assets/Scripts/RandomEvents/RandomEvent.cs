@@ -16,11 +16,6 @@ namespace RandomEvents
         public GameObject Wizard;
         public GameObject Cleric;
 
-        private Creature clericStatus = new Cleric();
-        private Creature fighterStatus = new Fighter();
-        private Creature rogueStatus = new Rogue();
-        private Creature wizardStatus = new Wizard();
-        
         private TextMeshProUGUI optionA;
         private TextMeshProUGUI optionB;
         

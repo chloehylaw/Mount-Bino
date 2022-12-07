@@ -86,4 +86,8 @@ MonoBehaviour:
   StatusEffectAttackAdvantage: 0
   StatusEffectSaveAdvantage: 0
   StatusEffectAttackAgainstAdvantage: 0
-  StatusEffectACBonus: 0
+  StatusEffectCheckBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
+  StatusEffectAttackBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
+  StatusEffectSaveBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
+  StatusEffectACBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
+  StatusEffectWeaponDamageBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}

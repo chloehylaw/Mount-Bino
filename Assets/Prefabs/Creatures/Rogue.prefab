@@ -66,7 +66,7 @@ MonoBehaviour:
   BonusActions: []
   FreeActions: []
   EndTurnActions:
-  - {fileID: 2120337553009906039, guid: a6791e1b6fa0ebc4c88f9587e50ee419, type: 3}
+  - {fileID: 0}
   Spells: []
   Statuses: []
   EquippedWeapon: {fileID: 0}
@@ -86,4 +86,8 @@ MonoBehaviour:
   StatusEffectAttackAdvantage: 0
   StatusEffectSaveAdvantage: 0
   StatusEffectAttackAgainstAdvantage: 0
-  StatusEffectACBonus: 0
+  StatusEffectCheckBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
+  StatusEffectAttackBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
+  StatusEffectSaveBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
+  StatusEffectACBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
+  StatusEffectDamageBonus: {fileID: 5184716358507225767, guid: b04aa43cbbd91944dbe9d67e43a1a1f8, type: 3}
