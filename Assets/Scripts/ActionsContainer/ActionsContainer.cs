@@ -33,7 +33,7 @@ public class ActionsContainer : MonoBehaviour
         {
             if (a != this)
             {
-                width += a.GetComponent<RectTransform>().sizeDelta.x + 25;
+                width += a.GetComponent<RectTransform>().sizeDelta.x + 50;
             }
 
         }

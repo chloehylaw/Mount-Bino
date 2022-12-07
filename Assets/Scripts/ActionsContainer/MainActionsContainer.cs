@@ -25,7 +25,7 @@ public class MainActionsContainer : ActionsContainer
     public void Initialize(Creature creature)
     {
         this.enabled = true;
-
+        actionsList = creature.Actions;
         if (actionsList.Count <= 0)
         {
             this.enabled = false;
@@ -34,7 +34,7 @@ public class MainActionsContainer : ActionsContainer
         }
         else
         {
-            actionsList = creature.Actions;
+            
 
             foreach (var action in actionsList)
             {

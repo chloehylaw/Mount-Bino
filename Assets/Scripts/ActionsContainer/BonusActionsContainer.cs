@@ -22,7 +22,7 @@ public class BonusActionsContainer : ActionsContainer
     public void Initialize(Creature creature)
     {
         this.enabled = true;
-        
+        bonusActionsList = creature.BonusActions;
         if (bonusActionsList.Count <= 0)
         {
             this.enabled = false;
@@ -30,7 +30,7 @@ public class BonusActionsContainer : ActionsContainer
             something.sizeDelta = new Vector2(0, something.sizeDelta.y);
         } else
         {
-            bonusActionsList = creature.BonusActions;
+            
 
             foreach (var bonusAction in bonusActionsList)
             {
