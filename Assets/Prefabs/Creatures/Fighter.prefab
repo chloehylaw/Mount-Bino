@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3388127510116924463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6025285725299746803}
+  - component: {fileID: 1251229256597412481}
+  m_Layer: 0
+  m_Name: Fighter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6025285725299746803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388127510116924463}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1251229256597412481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388127510116924463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0237192741d2f2741827c1fd72431894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Strength: 4
+  Dexterity: 1
+  Constitution: 3
+  Intelligence: -1
+  Wisdom: 1
+  Charisma: 0
+  ArmorClass: 18
+  Name: The Fighter
+  MaxHealth: 49
+  CurrentHealth: 49
+  ProficiencyBonus: 3
+  Actions:
+  - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
+  - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
+  - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
+  - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
+  - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
+  BonusActions:
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  Spells: []
+  Statuses: []
+  EquippedWeapon: {fileID: 0}
+  StatusEffectStrengthCheckAdvantage: 0
+  StatusEffectDexterityCheckAdvantage: 0
+  StatusEffectConstitutionCheckAdvantage: 0
+  StatusEffectIntelligenceCheckAdvantage: 0
+  StatusEffectWisdomCheckAdvantage: 0
+  StatusEffectCharismaCheckAdvantage: 0
+  StatusEffectStrengthSaveAdvantage: 0
+  StatusEffectDexteritySaveAdvantage: 0
+  StatusEffectConstitutionSaveAdvantage: 0
+  StatusEffectIntelligenceSaveAdvantage: 0
+  StatusEffectWisdomSaveAdvantage: 0
+  StatusEffectCharismaSaveAdvantage: 0
+  StatusEffectCheckAdvantage: 0
+  StatusEffectAttackAdvantage: 0
+  StatusEffectSaveAdvantage: 0
