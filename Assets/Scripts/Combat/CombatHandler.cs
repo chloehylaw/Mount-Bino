@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Dice;
 
 public class CombatHandler : MonoBehaviour
 {
@@ -11,11 +12,15 @@ public class CombatHandler : MonoBehaviour
     public List<Initiative> Initiatives = new();
     public Initiative currentInitiative;
     public List<CombatButton> CreatureUI;
+    public DieExpression dieExpression;
+    public int ticker = 0;
 
     public HealthBar healthBar;
+
+    public event System.Action<Creature> OnStartTurn;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         combatHandler = GetComponent<CombatHandler>();
         
@@ -50,13 +55,15 @@ public class CombatHandler : MonoBehaviour
         RollInitiative();
         currentInitiative = Initiatives[0];
         currentInitiative.creature.StartTurn();
-
+        OnStartTurn.Invoke(currentInitiative.creature);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        ticker++;
+        if (ticker % 100 == 0)
+            Debug.Log((int)new DieExpression("3d10+4-5d8-3-4+1d6"));
     }
 
     public void AdvanceTurn()
@@ -69,7 +76,7 @@ public class CombatHandler : MonoBehaviour
         }
         else currentInitiative = Initiatives[temp+1];
         currentInitiative.creature.StartTurn();
-
+        OnStartTurn.Invoke(currentInitiative.creature);
     }
 
     public void RollInitiative()

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Dice;
 
 public abstract class Creature : MonoBehaviour
 {
@@ -11,17 +12,51 @@ public abstract class Creature : MonoBehaviour
     public int Intelligence;
     public int Wisdom;
     public int Charisma;
+
+    public bool IsProficientStrengthSaves;
+    public bool IsProficientDexteritySaves;
+    public bool IsProficientConstitutionSaves;
+    public bool IsProficientIntelligenceSaves;
+    public bool IsProficientWisdomSaves;
+    public bool IsProficientCharismaSaves;
+
     public int ArmorClass;
     public string Name;
     public int MaxHealth;
     public int CurrentHealth;
     public int ProficiencyBonus;
     public List<Action> Actions;
+    public List<BonusAction> BonusActions;
+    public List<BonusAction> FreeActions;
+    public List<BonusAction> EndTurnActions;
     public List<Spell> Spells;
     public List<Status> Statuses;
     public Weapon EquippedWeapon;
     public event System.Action OnStartTurn;
+    public event System.Action OnEndTurn;
     public event System.Action<int> OnTakeDamage;
+
+    public int StatusEffectStrengthCheckAdvantage;
+    public int StatusEffectDexterityCheckAdvantage;
+    public int StatusEffectConstitutionCheckAdvantage;
+    public int StatusEffectIntelligenceCheckAdvantage;
+    public int StatusEffectWisdomCheckAdvantage;
+    public int StatusEffectCharismaCheckAdvantage;
+    public int StatusEffectStrengthSaveAdvantage;
+    public int StatusEffectDexteritySaveAdvantage;
+    public int StatusEffectConstitutionSaveAdvantage;
+    public int StatusEffectIntelligenceSaveAdvantage;
+    public int StatusEffectWisdomSaveAdvantage;
+    public int StatusEffectCharismaSaveAdvantage;
+    public int StatusEffectCheckAdvantage;
+    public int StatusEffectAttackAdvantage;
+    public int StatusEffectSaveAdvantage;
+    public int StatusEffectAttackAgainstAdvantage;
+    public DieExpression StatusEffectCheckBonus;
+    public DieExpression StatusEffectAttackBonus;
+    public DieExpression StatusEffectSaveBonus;
+    public int StatusEffectACBonus;
+
 
     internal abstract int GetSpellAttackBonus();
 
@@ -35,33 +70,125 @@ public abstract class Creature : MonoBehaviour
             action.sourceCreature = this;
         }
 
-        
+        foreach (var bonusAction in BonusActions)
+        {
+            bonusAction.sourceCreature = this;
+        }
+
     }
-    public abstract int GetArmorClass();
+    public int GetArmorClass()
+    {
+        return ArmorClass + StatusEffectACBonus;
+    }
     public abstract void Die();
     public abstract void EnterDying();
-    public abstract void EndTurn();
-    public abstract int GetAttackBonus();
+    public void EndTurn()
+    {
+        OnEndTurn?.Invoke();
+    }
+    public int GetAttackBonus()
+    {
+        if (EquippedWeapon.UsesDex && EquippedWeapon.UsesStrength)
+            return Mathf.Max(Dexterity, Strength) + StatusEffectAttackBonus;
+        else if (EquippedWeapon.UsesDex)
+            return Dexterity + StatusEffectAttackBonus;
+        else
+            return Strength + StatusEffectAttackBonus;
+    }
     public abstract int GetDamageBonus();
     internal Weapon GetWeapon()
     {
         return EquippedWeapon;
     }
-    internal abstract int GetInitiativeBonus();
+
+    internal int GetInitiativeBonus()
+    {
+        return Dexterity;
+    }
     public void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
         OnTakeDamage?.Invoke(damage);
     }
     public abstract void Act(string action, Creature target);
-    public abstract void TickStatuses();
+    public void TickStatuses(int s)
+    {
+        foreach(var status in Statuses)
+        {
+            status.Tick(s);
+        }
+    }
+    public abstract void BonusAct(string bonusAction, Creature target);
     public void StartTurn()
     {
         OnStartTurn?.Invoke();
         //TickStatuses();
     }
 
-   
+    public int GetSpellSaveDC()
+    {
+        return 8 + Intelligence + ProficiencyBonus;
+    }
+
+    public int MakeStrengthSave() 
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectStrengthSaveAdvantage + StatusEffectSaveAdvantage) + Strength + (IsProficientStrengthSaves ? 3 : 0) + StatusEffectSaveBonus;
+    }
+
+    public int MakeDexteritySave()
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectDexteritySaveAdvantage + StatusEffectSaveAdvantage) + Dexterity + (IsProficientDexteritySaves ? 3 : 0) + StatusEffectSaveBonus;
+    }
+
+    public int MakeConstituionSave()
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectConstitutionSaveAdvantage + StatusEffectSaveAdvantage) + Constitution + (IsProficientConstitutionSaves ? 3 : 0) + StatusEffectSaveBonus;
+    }
+
+    public int MakeIntelligenceSave()
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectIntelligenceSaveAdvantage + StatusEffectSaveAdvantage) + Intelligence + (IsProficientIntelligenceSaves ? 3 : 0) + StatusEffectSaveBonus;
+    }
+
+    public int MakeWisdomSave()
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectWisdomSaveAdvantage + StatusEffectSaveAdvantage) + Wisdom + (IsProficientWisdomSaves ? 3 : 0) + StatusEffectSaveBonus;
+    }
+
+    public int MakeCharismaSave()
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectCharismaSaveAdvantage + StatusEffectSaveAdvantage) + Charisma + (IsProficientCharismaSaves ? 3 : 0) + StatusEffectSaveBonus;
+    }
+
+    public int MakeStrengthCheck() 
+    { 
+        return Dice.dice.Roll(1, 20, StatusEffectStrengthCheckAdvantage + StatusEffectCheckAdvantage) + Strength + StatusEffectCheckBonus;
+    }
+
+    public int MakeDexterityCheck()
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectDexterityCheckAdvantage + StatusEffectCheckAdvantage) + Dexterity + StatusEffectCheckBonus;
+    }
+
+    public int MakeConstitutionCheck()
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectConstitutionCheckAdvantage + StatusEffectCheckAdvantage) + Constitution + StatusEffectCheckBonus;
+    }
+
+    public int MakeIntelligenceCheck()
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectIntelligenceCheckAdvantage + StatusEffectCheckAdvantage) + Intelligence + StatusEffectCheckBonus;
+    }
+
+    public int MakeWisdomCheck()
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectWisdomCheckAdvantage + StatusEffectCheckAdvantage) + Wisdom + StatusEffectCheckBonus;
+    }
+
+    public int MakeCharismaCheck()
+    {
+        return Dice.dice.Roll(1, 20, StatusEffectCharismaCheckAdvantage + StatusEffectCheckAdvantage) + Charisma + StatusEffectCheckBonus;
+    }
 
     // Update is called once per frame
     void Update()

@@ -10,7 +10,7 @@ public class GameHandler : MonoBehaviour
     public static GameHandler gameHandler;
     public List<Creature> Party;
     public List<Creature> Enemies;
-
+    public enum AbilityScores { Strength, Dexterity, Consitytion, Intelligence, Charisma, Wisdom };
     public Creature Fighter;
     public Creature Rogue;
     public Creature Wizard;
