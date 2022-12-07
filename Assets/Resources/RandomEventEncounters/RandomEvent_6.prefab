@@ -712,9 +712,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are two guards standing in front of a heavily guarded door. A previous
-    passerby mentionned to not look towards the guarded door but your party stumbles
-    upon it on accident. What do you do?
+  m_text: Your party stumble upon an unknown creature's nest. There seem to be eggs
+    inside but the creature seems protective of it.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1333,7 +1332,7 @@ GameObject:
   - component: {fileID: 5655670323957666792}
   - component: {fileID: 5655670323957666795}
   m_Layer: 0
-  m_Name: RandomEvent_3
+  m_Name: RandomEvent_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1846,7 +1845,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Option A: The Wizard decides to use a charming spell (Charisma) DC18'
+  m_text: 'Option A: The Cleric supports the team to reach the eggs. (Charisma) DC15'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1981,8 +1980,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Option B: The Rogue tries to sneak up and knock them down (Dexterity)
-    DC16'
+  m_text: 'Option B: The party decides to move on.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

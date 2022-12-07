@@ -51,6 +51,9 @@ namespace RandomEvents
             case "RandomEvent_2(Clone)":
                 // something
                 break;
+            case "RandomEvent_3(Clone)":
+                // something
+                break;
             }
         }
 
@@ -59,7 +62,7 @@ namespace RandomEvents
             int diceRoll;
             displayAnswer();
             AnswerOptionA.SetActive(true);
-            
+
             switch (gameObjectName)
             {
             case "RandomEvent_0(Clone)":
@@ -92,6 +95,7 @@ namespace RandomEvents
                 break;
             }
             case "RandomEvent_2(Clone)":
+            {
                 diceRoll = GameHandler.gameHandler.Cleric.MakeWisdomCheck();
                 if (diceRoll > 15)
                 {
@@ -104,14 +108,89 @@ namespace RandomEvents
                 }
                 break;
             }
+            case "RandomEvent_3(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Wizard.MakeCharismaCheck();
+                if (diceRoll > 18)
+                {
+                    optionA.text = "Success! Dice rolled: " + diceRoll + "\nWizard Charisma +1";
+                    GameHandler.gameHandler.Wizard.Charisma += 1;
+                } else
+                {
+                    optionA.text = "Failed! Dice rolled: " + diceRoll + "\nWizard Charisma -1";
+                    GameHandler.gameHandler.Wizard.Charisma -= 1;
+                }
+                break;
+            }
+            case "RandomEvent_4(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Wizard.MakeIntelligenceCheck();
+                if (diceRoll > 18)
+                {
+                    optionA.text = "Success! Dice rolled: " + diceRoll + "\nWizard Intelligence +1";
+                    GameHandler.gameHandler.Wizard.Intelligence += 1;
+                } else
+                {
+                    optionA.text = "Failed! Dice rolled: " + diceRoll + "\nWizard Intelligence -1";
+                    GameHandler.gameHandler.Wizard.Intelligence -= 1;
+                }
+                break;
+            }
+            case "RandomEvent_5(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Fighter.MakeConstitutionCheck();
+                if (diceRoll > 17)
+                {
+                    optionA.text = "Success! Dice rolled: " + diceRoll + "\nFighter Constitution +1";
+                    GameHandler.gameHandler.Fighter.Constitution += 1;
+                } else
+                {
+                    optionA.text = "Failed! Dice rolled: " + diceRoll + "\nFighter Constitution -1";
+                    GameHandler.gameHandler.Fighter.Constitution -= 1;
+                }
+                break;
+            }
+            case "RandomEvent_6(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Cleric.MakeCharismaCheck();
+                if (diceRoll > 17)
+                {
+                    optionA.text = "Success! Dice rolled: " + diceRoll + "\nCleric Charisma +1";
+                    GameHandler.gameHandler.Cleric.Charisma += 1;
+                } else
+                {
+                    optionA.text = "Failed! Dice rolled: " + diceRoll + "\nCleric Charisma -1\nEvery Party Member Health - 1";
+                    GameHandler.gameHandler.Cleric.Charisma -= 1;
+                    GameHandler.gameHandler.Cleric.CurrentHealth -= 1;
+                    GameHandler.gameHandler.Fighter.CurrentHealth -= 1;
+                    GameHandler.gameHandler.Wizard.CurrentHealth -= 1;
+                    GameHandler.gameHandler.Rogue.CurrentHealth -= 1;
+                }
+                break;
+            }
+            case "RandomEvent_7(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Fighter.MakeConstitutionCheck();
+                if (diceRoll > 14)
+                {
+                    optionA.text = "Success! Dice rolled: " + diceRoll + "\nFighter Charisma +1";
+                    GameHandler.gameHandler.Fighter.Constitution += 1;
+                } else
+                {
+                    optionA.text = "Failed! Dice rolled: " + diceRoll + "\nFighter Charisma -1";
+                    GameHandler.gameHandler.Fighter.Constitution -= 1;
+                }
+                break;
+            }
+            }
         }
-        
+
         public void clickOptionB ()
         {
             int diceRoll;
             displayAnswer();
             AnswerOptionB.SetActive(true);
-            
+
             switch (gameObjectName)
             {
             case "RandomEvent_0(Clone)":
@@ -133,6 +212,7 @@ namespace RandomEvents
                 break;
             }
             case "RandomEvent_2(Clone)":
+            {
                 diceRoll = GameHandler.gameHandler.Wizard.MakeWisdomCheck();
                 if (diceRoll > 15)
                 {
@@ -144,7 +224,68 @@ namespace RandomEvents
                     GameHandler.gameHandler.Wizard.Wisdom -= 1;
                 }
                 break;
+            }
+            case "RandomEvent_3(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Rogue.MakeDexterityCheck();
+                if (diceRoll > 16)
+                {
+                    optionB.text = "Success! Dice rolled: " + diceRoll + "\nRogue Dexterity +1";
+                    GameHandler.gameHandler.Rogue.Dexterity += 1;
+                } else
+                {
+                    optionB.text = "Failed! Dice rolled: " + diceRoll + "\nRogue Dexterity -1";
+                    GameHandler.gameHandler.Rogue.Dexterity -= 1;
+                }
                 break;
+            }
+            case "RandomEvent_4(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Cleric.MakeWisdomCheck();
+                if (diceRoll > 16)
+                {
+                    optionB.text = "Success! Dice rolled: " + diceRoll + "\nCleric Wisdom +1";
+                    GameHandler.gameHandler.Cleric.Wisdom += 1;
+                } else
+                {
+                    optionB.text = "Failed! Dice rolled: " + diceRoll + "\nCleric Wisdom -1";
+                    GameHandler.gameHandler.Cleric.Wisdom -= 1;
+                }
+                break;
+            }
+            case "RandomEvent_5(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Cleric.MakeWisdomCheck();
+                if (diceRoll > 18)
+                {
+                    optionB.text = "Success! Dice rolled: " + diceRoll + "\nCleric Wisdom +1";
+                    GameHandler.gameHandler.Cleric.Wisdom += 1;
+                } else
+                {
+                    optionB.text = "Failed! Dice rolled: " + diceRoll + "\nCleric Wisdom -1";
+                    GameHandler.gameHandler.Cleric.Wisdom -= 1;
+                }
+                break;
+            }
+            case "RandomEvent_6(Clone)":
+            {
+                optionB.text = "Nothing Happens.";
+                break;
+            }
+            case "RandomEvent_7(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Rogue.MakeStrengthCheck();
+                if (diceRoll > 15)
+                {
+                    optionB.text = "Success! Dice rolled: " + diceRoll + "\nRogue Strength +1";
+                    GameHandler.gameHandler.Rogue.Strength += 1;
+                } else
+                {
+                    optionB.text = "Failed! Dice rolled: " + diceRoll + "\nRogue Strength -1";
+                    GameHandler.gameHandler.Rogue.Strength -= 1;
+                }
+                break;
+            }
             }
         }
         

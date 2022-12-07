@@ -628,6 +628,13 @@ MonoBehaviour:
   - EnemyEncounters/BossEnemyEncounters
   eventEncounters:
   - RandomEventEncounters/RandomEvent_0
+  - RandomEventEncounters/RandomEvent_1
+  - RandomEventEncounters/RandomEvent_2
+  - RandomEventEncounters/RandomEvent_3
+  - RandomEventEncounters/RandomEvent_4
+  - RandomEventEncounters/RandomEvent_5
+  - RandomEventEncounters/RandomEvent_6
+  - RandomEventEncounters/RandomEvent_7
 --- !u!4 &444931343
 Transform:
   m_ObjectHideFlags: 0
@@ -1307,7 +1314,6 @@ MonoBehaviour:
   Answer: {fileID: 1875774009}
   AnswerOptionA: {fileID: 1490747825}
   AnswerOptionB: {fileID: 787687985}
-  SelectPlayer: {fileID: 1828373484}
   Fighter: {fileID: 1798660114}
   Rogue: {fileID: 223201219}
   Wizard: {fileID: 1395222699}

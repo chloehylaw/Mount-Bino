@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using RandomEvents;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -64,14 +62,8 @@ public class GameHandler : MonoBehaviour
     public void enterEventScene (string eventPath)
     {
         Debug.Log(eventPath);
-        /*RandomEventEncounter encounter = Resources.Load<RandomEventEncounter>(eventPath);
-        Event = encounter.events.AddComponent<RandomEvent>();
-        Event = Instantiate(encounter.events);
-        Debug.Log(Event.ToString());
-        Instantiate(Resources.Load(eventPath));*/
         
         SceneManager.LoadScene("RandomEvent");
-        //RandomEventHandler.randomEventHandler.StartEvent(eventPath);
         StartCoroutine(StartEventAfterSceneLoad(eventPath));
     }
 
@@ -81,7 +73,6 @@ public class GameHandler : MonoBehaviour
         { 
             yield return null;
         }
-        //Instantiate(Resources.Load(eventPath));
         RandomEventHandler.randomEventHandler.StartEvent(eventPath);
     }
     
