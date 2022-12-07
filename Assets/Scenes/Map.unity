@@ -2158,7 +2158,9 @@ MonoBehaviour:
   bossEnemyEncounters:
   - EnemyEncounters/BossEnemyEncounters
   eventEncounters:
-  - RandomEventEncounters/RandomEvent_01
+  - RandomEventEncounters/RandomEvent_0
+  - RandomEventEncounters/RandomEvent_1
+  - RandomEventEncounters/RandomEvent_2
 --- !u!4 &971086037
 Transform:
   m_ObjectHideFlags: 0

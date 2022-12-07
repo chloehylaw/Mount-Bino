@@ -11,55 +11,140 @@ namespace RandomEvents
         public GameObject AnswerOptionA;
         public GameObject AnswerOptionB;
 
-        public GameObject SelectPlayer;
         public GameObject Fighter;
         public GameObject Rogue;
         public GameObject Wizard;
         public GameObject Cleric;
 
-        private TextMeshProUGUI selectPlayer;
+        private Creature clericStatus = new Cleric();
+        private Creature fighterStatus = new Fighter();
+        private Creature rogueStatus = new Rogue();
+        private Creature wizardStatus = new Wizard();
+        
+        private TextMeshProUGUI optionA;
+        private TextMeshProUGUI optionB;
         
         private string gameObjectName;
+        
         
         public void Start ()
         {
             gameObjectName = gameObject.name;
             Debug.Log(gameObjectName);
 
-            selectPlayer = SelectPlayer.GetComponent<TextMeshProUGUI>();
+            optionA = AnswerOptionA.GetComponent<TextMeshProUGUI>();
+            optionB = AnswerOptionB.GetComponent<TextMeshProUGUI>();
 
         }
 
         public void Update ()
         {
-            if (gameObjectName == "RandomEvent_0")
+            //Debug.Log("GameObject: " + gameObjectName);
+            switch (gameObjectName)
             {
-                Fighter.SetActive(false);
-                Rogue.SetActive(true);
-                Wizard.SetActive(false);
-                Cleric.SetActive(false);
+            case "RandomEvent_0(Clone)":
+                // something
+                break;
+            case "RandomEvent_1(Clone)":
+                // something
+                break;
+            case "RandomEvent_2(Clone)":
+                // something
+                break;
             }
         }
 
         public void clickOptionA ()
         {
+            int diceRoll;
             displayAnswer();
             AnswerOptionA.SetActive(true);
             
-            if (gameObjectName == "RandomEvent_0")
+            switch (gameObjectName)
             {
-                // Update Rogue status
+            case "RandomEvent_0(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Rogue.MakeDexterityCheck();
+                if (diceRoll > 15)
+                {
+                    optionA.text = "Success! Dice rolled: " + diceRoll + "\nRogue Dexterity +1";
+                    GameHandler.gameHandler.Rogue.Dexterity += 1;
+
+                } else
+                {
+                    optionA.text = "Failed! Dice rolled: " + diceRoll + "\nRogue Dexterity -1";
+                    GameHandler.gameHandler.Rogue.Dexterity -= 1;
+                }
+                break;
+            }
+            case "RandomEvent_1(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Rogue.MakeDexterityCheck();
+                if (diceRoll > 13)
+                {
+                    optionA.text = "Success! Dice rolled: " + diceRoll + "\nRogue Dexterity +1";
+                    GameHandler.gameHandler.Rogue.Dexterity += 1;
+                } else
+                {
+                    optionA.text = "Failed! Dice rolled: " + diceRoll + "\nRogue Dexterity -1";
+                    GameHandler.gameHandler.Rogue.Dexterity -= 1;
+                }
+                break;
+            }
+            case "RandomEvent_2(Clone)":
+                diceRoll = GameHandler.gameHandler.Cleric.MakeWisdomCheck();
+                if (diceRoll > 15)
+                {
+                    optionA.text = "Success! Dice rolled: " + diceRoll + "\nCleric Wisdom +1";
+                    GameHandler.gameHandler.Rogue.Wisdom += 1;
+                } else
+                {
+                    optionA.text = "Failed! Dice rolled: " + diceRoll + "\nCleric Wisdom -1";
+                    GameHandler.gameHandler.Rogue.Wisdom -= 1;
+                }
+                break;
             }
         }
         
         public void clickOptionB ()
         {
+            int diceRoll;
             displayAnswer();
             AnswerOptionB.SetActive(true);
             
-            if (gameObjectName == "RandomEvent_0")
+            switch (gameObjectName)
             {
+            case "RandomEvent_0(Clone)":
+                optionB.text = "Nothing happens.";
                 // Nothing happens
+                break;
+            case "RandomEvent_1(Clone)":
+            {
+                diceRoll = GameHandler.gameHandler.Fighter.MakeStrengthCheck();
+                if (diceRoll > 13)
+                {
+                    optionA.text = "Success! Dice rolled: " + diceRoll + "\nFighter Strength +1";
+                    GameHandler.gameHandler.Fighter.Strength += 1;
+                } else
+                {
+                    optionA.text = "Failed! Dice rolled: " + diceRoll + "\nFighter Strength -1";
+                    GameHandler.gameHandler.Fighter.Strength -= 1;
+                }
+                break;
+            }
+            case "RandomEvent_2(Clone)":
+                diceRoll = GameHandler.gameHandler.Wizard.MakeWisdomCheck();
+                if (diceRoll > 15)
+                {
+                    optionB.text = "Success! Dice rolled: " + diceRoll + "\nWizard Wisdom +1";
+                    GameHandler.gameHandler.Wizard.Wisdom += 1;
+                } else
+                {
+                    optionB.text = "Failed! Dice rolled: " + diceRoll + "\nWizard Wisdom -1";
+                    GameHandler.gameHandler.Wizard.Wisdom -= 1;
+                }
+                break;
+                break;
             }
         }
         
