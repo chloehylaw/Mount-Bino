@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shove : Action
+public class BonusActionTest : BonusAction
 {
     public override void Use(Creature target)
     {

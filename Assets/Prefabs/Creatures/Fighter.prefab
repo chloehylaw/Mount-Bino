@@ -57,5 +57,32 @@ MonoBehaviour:
   ProficiencyBonus: 3
   Actions:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
+  - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
+  - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
+  - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
+  - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
+  BonusActions:
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
   Spells: []
   Statuses: []
+  EquippedWeapon: {fileID: 0}
+  StatusEffectStrengthCheckAdvantage: 0
+  StatusEffectDexterityCheckAdvantage: 0
+  StatusEffectConstitutionCheckAdvantage: 0
+  StatusEffectIntelligenceCheckAdvantage: 0
+  StatusEffectWisdomCheckAdvantage: 0
+  StatusEffectCharismaCheckAdvantage: 0
+  StatusEffectStrengthSaveAdvantage: 0
+  StatusEffectDexteritySaveAdvantage: 0
+  StatusEffectConstitutionSaveAdvantage: 0
+  StatusEffectIntelligenceSaveAdvantage: 0
+  StatusEffectWisdomSaveAdvantage: 0
+  StatusEffectCharismaSaveAdvantage: 0
+  StatusEffectCheckAdvantage: 0
+  StatusEffectAttackAdvantage: 0
+  StatusEffectSaveAdvantage: 0
