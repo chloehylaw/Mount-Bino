@@ -9,7 +9,7 @@ public class EndTurn : EndTurnAction
 
     //public EndTurnContainer container;
 
-    public ActionsContainer actionContainer;
+    //public ActionsContainer actionContainer;
     public override void Use(Creature target)
     {
         throw new System.NotImplementedException();
@@ -25,7 +25,7 @@ public class EndTurn : EndTurnAction
     public void FinishTurn()
     {
         CombatHandler.combatHandler.AdvanceTurn();
-        actionContainer.enabled = false;
+        //actionContainer.enabled = false;
     }
 
 
