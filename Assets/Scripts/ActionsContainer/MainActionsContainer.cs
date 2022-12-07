@@ -30,7 +30,7 @@ public class MainActionsContainer : ActionsContainer
         {
             this.enabled = false;
             var something = GetComponent<RectTransform>();
-            something.sizeDelta = new Vector2(0, something.sizeDelta.y);
+            something.sizeDelta = new Vector2(0, 0);
         }
         else
         {

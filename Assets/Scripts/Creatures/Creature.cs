@@ -69,7 +69,6 @@ public abstract class Creature : MonoBehaviour
         {
             action.sourceCreature = this;
         }
-
         foreach (var bonusAction in BonusActions)
         {
             bonusAction.sourceCreature = this;
@@ -126,6 +125,8 @@ public abstract class Creature : MonoBehaviour
         }
     }
     public abstract void BonusAct(string bonusAction, Creature target);
+    public abstract void FreeAct(string bonusAction, Creature target);
+    public abstract void EndTurnAct(string bonusAction, Creature target);
     public void StartTurn()
     {
         OnStartTurn?.Invoke();
