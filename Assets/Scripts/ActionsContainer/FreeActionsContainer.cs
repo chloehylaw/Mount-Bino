@@ -8,9 +8,9 @@ public class FreeActionsContainer : ActionsContainer
 {
     public Creature creature;
 
-    public List<BonusAction> freeActionsList;
+    public List<FreeAction> freeActionsList;
 
-    public Button freeActionButton;
+    public Button actionButton;
 
 
     // Start is called before the first frame update
@@ -22,6 +22,7 @@ public class FreeActionsContainer : ActionsContainer
     public void Initialize(Creature creature)
     {
         this.enabled = true;
+        freeActionsList = creature.FreeActions;
 
         if (freeActionsList.Count <= 0)
         {
@@ -31,14 +32,14 @@ public class FreeActionsContainer : ActionsContainer
         }
         else
         {
-            freeActionsList = creature.FreeActions;
+          
 
-            foreach (var bonusAction in freeActionsList)
+            foreach (var freeAction in freeActionsList)
             {
 
-                var tempButton = Instantiate(freeActionButton, transform);
+                var tempButton = Instantiate(actionButton, transform);
                 //var tempText = Instantiate(actionText);
-                tempButton.GetComponentInChildren<TextMeshProUGUI>().text = bonusAction.Name;
+                tempButton.GetComponentInChildren<TextMeshProUGUI>().text = freeAction.Name;
                 var something = GetComponent<RectTransform>();
                 something.sizeDelta = new Vector2(something.sizeDelta.x + tempButton.GetComponent<RectTransform>().sizeDelta.x + 25, something.sizeDelta.y);
 
