@@ -13,8 +13,9 @@ namespace RandomEvents
             randomEventHandler = GetComponent<RandomEventHandler>();
         }
 
-        public void StartEvent (String eventPath)
+        public void StartEvent (string eventPath)
         {
+            Debug.Log(eventPath);
             Instantiate(Resources.Load(eventPath));
         }
     }
