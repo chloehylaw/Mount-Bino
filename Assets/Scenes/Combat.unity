@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9956364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -576,7 +576,7 @@ MonoBehaviour:
   width: 0
   creature: {fileID: 0}
   endTurnActionsList: []
-  actionButton: {fileID: 15763122946293811, guid: 2d6ac5762004500449433f4d1deb782c, type: 3}
+  actionButton: {fileID: 0}
 --- !u!114 &93114721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,7 +805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &152668563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1421,7 +1421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &443866618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2223,7 +2223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1018196726
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3494,7 +3494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1812924892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3527,7 +3527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89308af101f9cf4baddff0f811af99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creature: {fileID: 1251229256597412481, guid: b82e0da2c336b8348850889acdef464b, type: 3}
+  creature: {fileID: 0}
 --- !u!1 &1836431046
 GameObject:
   m_ObjectHideFlags: 0
@@ -3544,7 +3544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1836431047
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3577,7 +3577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89308af101f9cf4baddff0f811af99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creature: {fileID: 1251229256597412481, guid: b82e0da2c336b8348850889acdef464b, type: 3}
+  creature: {fileID: 0}
 --- !u!1001 &1861452166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3683,7 +3683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4416783679266928265, guid: 10a8118b6e7a8a94085a383196a12170, type: 3}
       propertyPath: m_fontStyle
-      value: 65
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4416783679266928265, guid: 10a8118b6e7a8a94085a383196a12170, type: 3}
       propertyPath: m_fontColor.b
@@ -4148,7 +4148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2032155113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4198,7 +4198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2077422798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4289,7 +4289,7 @@ MonoBehaviour:
   width: 0
   creature: {fileID: 0}
   freeActionsList: []
-  actionButton: {fileID: 8771150088497039102, guid: 1af6e4714e1877241b1423106d48905d, type: 3}
+  actionButton: {fileID: 0}
 --- !u!114 &2093972408
 MonoBehaviour:
   m_ObjectHideFlags: 0

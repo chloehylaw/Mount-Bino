@@ -55,7 +55,7 @@ public abstract class Creature : MonoBehaviour
     public DieExpression StatusEffectCheckBonus;
     public DieExpression StatusEffectAttackBonus;
     public DieExpression StatusEffectSaveBonus;
-    public int StatusEffectACBonus;
+    public DieExpression StatusEffectACBonus;
 
 
     internal abstract int GetSpellAttackBonus();

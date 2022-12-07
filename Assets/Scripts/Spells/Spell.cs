@@ -5,10 +5,11 @@ using UnityEngine;
 public abstract class Spell : MonoBehaviour
 {
     protected Creature sourceCreature;
-    public int level;
+    public int Level;
+    public int Cost;
     public int Duration;
-    public int Positions;
-    public int Targets;
+    public List<int> Positions;
+    public List<int> Targets;
     public int AmountOfTargets;
     // Start is called before the first frame update
     void Start()

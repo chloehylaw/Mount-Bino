@@ -62,7 +62,7 @@ public class Dice : MonoBehaviour
         return temp;
     }
 
-    public class DieExpression
+    public class DieExpression : MonoBehaviour
     {
         public string Expression;
         public int[] rolls;
