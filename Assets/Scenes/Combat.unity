@@ -576,7 +576,7 @@ MonoBehaviour:
   width: 0
   creature: {fileID: 0}
   endTurnActionsList: []
-  endTurnActionButton: {fileID: 8771150088497039102, guid: 1af6e4714e1877241b1423106d48905d, type: 3}
+  actionButton: {fileID: 15763122946293811, guid: 2d6ac5762004500449433f4d1deb782c, type: 3}
 --- !u!114 &93114721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,8 +590,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 25
-    m_Right: 25
+    m_Left: 0
+    m_Right: 0
     m_Top: 25
     m_Bottom: 25
   m_ChildAlignment: 3
@@ -2582,7 +2582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.00012207031, y: 146.5}
+  m_AnchoredPosition: {x: 0, y: 146.5}
   m_SizeDelta: {x: 1920, y: 293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1417568629
@@ -2852,8 +2852,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 25
-    m_Right: 25
+    m_Left: 0
+    m_Right: 0
     m_Top: 25
     m_Bottom: 25
   m_ChildAlignment: 3
@@ -3409,8 +3409,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 25
-    m_Right: 25
+    m_Left: 0
+    m_Right: 0
     m_Top: 25
     m_Bottom: 25
   m_ChildAlignment: 3
@@ -3746,6 +3746,11 @@ MonoBehaviour:
   Rogue: {fileID: 2277169239070161113, guid: 77f7593e12f5d794d9c2a996478f43ca, type: 3}
   Wizard: {fileID: 1638119758694194337, guid: e5071fede11940d4ca70cc0c5f8b901d, type: 3}
   Cleric: {fileID: 1032927421062975991, guid: 642e7d03abb44f641ace90f57b12217c, type: 3}
+  minorEnemyEncounters: []
+  eliteEnemyEncounters: []
+  specialistEnemyEncounters: []
+  bossEnemyEncounters: []
+  eventEncounters: []
 --- !u!4 &1978703012
 Transform:
   m_ObjectHideFlags: 0
@@ -4084,7 +4089,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1200894685}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.99999994
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4284,7 +4289,7 @@ MonoBehaviour:
   width: 0
   creature: {fileID: 0}
   freeActionsList: []
-  freeActionButton: {fileID: 8771150088497039102, guid: 1af6e4714e1877241b1423106d48905d, type: 3}
+  actionButton: {fileID: 8771150088497039102, guid: 1af6e4714e1877241b1423106d48905d, type: 3}
 --- !u!114 &2093972408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4298,8 +4303,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 25
-    m_Right: 25
+    m_Left: 0
+    m_Right: 0
     m_Top: 25
     m_Bottom: 25
   m_ChildAlignment: 3
