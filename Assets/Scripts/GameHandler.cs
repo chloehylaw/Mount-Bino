@@ -30,9 +30,13 @@ public class GameHandler : MonoBehaviour
         gameHandler = GetComponent<GameHandler>();
         DontDestroyOnLoad(gameObject);
         Party[0] = Instantiate(Fighter, transform);
-        Party[1] = Instantiate(Rogue, transform);
-        Party[2] = Instantiate(Wizard, transform);
-        Party[3] = Instantiate(Cleric, transform);
+        Party[1] = Instantiate(Cleric, transform);
+        Party[2] = Instantiate(Rogue, transform);
+        Party[3] = Instantiate(Wizard, transform);
+        Fighter = Party[0];
+        Cleric = Party[1];
+        Rogue = Party[2];
+        Wizard = Party[3];
         //CombatHandler.combatHandler.StartCombat(Party, Enemies);
     }
 
