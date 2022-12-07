@@ -36,26 +36,27 @@ public abstract class Creature : MonoBehaviour
     public event System.Action OnEndTurn;
     public event System.Action<int> OnTakeDamage;
 
-    public int StatusEffectStrengthCheckAdvantage;
-    public int StatusEffectDexterityCheckAdvantage;
-    public int StatusEffectConstitutionCheckAdvantage;
-    public int StatusEffectIntelligenceCheckAdvantage;
-    public int StatusEffectWisdomCheckAdvantage;
-    public int StatusEffectCharismaCheckAdvantage;
-    public int StatusEffectStrengthSaveAdvantage;
-    public int StatusEffectDexteritySaveAdvantage;
-    public int StatusEffectConstitutionSaveAdvantage;
-    public int StatusEffectIntelligenceSaveAdvantage;
-    public int StatusEffectWisdomSaveAdvantage;
-    public int StatusEffectCharismaSaveAdvantage;
-    public int StatusEffectCheckAdvantage;
-    public int StatusEffectAttackAdvantage;
-    public int StatusEffectSaveAdvantage;
+    public int StatusEffectStrengthCheckAdvantage = 0;
+    public int StatusEffectDexterityCheckAdvantage = 0;
+    public int StatusEffectConstitutionCheckAdvantage = 0;
+    public int StatusEffectIntelligenceCheckAdvantage = 0;
+    public int StatusEffectWisdomCheckAdvantage = 0;
+    public int StatusEffectCharismaCheckAdvantage = 0;
+    public int StatusEffectStrengthSaveAdvantage = 0;
+    public int StatusEffectDexteritySaveAdvantage = 0;
+    public int StatusEffectConstitutionSaveAdvantage = 0;
+    public int StatusEffectIntelligenceSaveAdvantage = 0;
+    public int StatusEffectWisdomSaveAdvantage = 0;
+    public int StatusEffectCharismaSaveAdvantage = 0;
+    public int StatusEffectCheckAdvantage = 0;
+    public int StatusEffectAttackAdvantage = 0;
+    public int StatusEffectSaveAdvantage = 0;
     public int StatusEffectAttackAgainstAdvantage;
     public DieExpression StatusEffectCheckBonus;
     public DieExpression StatusEffectAttackBonus;
     public DieExpression StatusEffectSaveBonus;
     public DieExpression StatusEffectACBonus;
+    public DieExpression StatusEffectDamageBonus;
 
 
     internal abstract int GetSpellAttackBonus();
@@ -64,7 +65,11 @@ public abstract class Creature : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() 
-    { 
+    {
+        //StatusEffectACBonus = new DieExpression("0");
+        //StatusEffectAttackBonus = new DieExpression("0");
+        //StatusEffectSaveBonus = new DieExpression("0");
+        //StatusEffectCheckBonus = new DieExpression("0");
         foreach (var action in Actions)
         {
             action.sourceCreature = this;

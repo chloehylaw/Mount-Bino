@@ -71,22 +71,22 @@ namespace Map
             {
                 case NodeType.MinorEnemy:
                     GroupXP.groupXPValue += 1000;
-                    //GameHandler.gameHandler.enterCombatScene(mapNode.Node.enemies);
+                    GameHandler.gameHandler.enterCombatScene(mapNode.Node.enemies);
                     break;
                 case NodeType.EliteEnemy:
-                    //GameHandler.gameHandler.enterCombatScene(mapNode.Node.enemies);
+                    GameHandler.gameHandler.enterCombatScene(mapNode.Node.enemies);
                     GroupXP.groupXPValue += 2000;
                     break;
                 case NodeType.SpecialistEnemy:
-                    //GameHandler.gameHandler.enterCombatScene(mapNode.Node.enemies);
+                    GameHandler.gameHandler.enterCombatScene(mapNode.Node.enemies);
                     GroupXP.groupXPValue += 3000;
                     break;
                 case NodeType.Boss:
-                    //GameHandler.gameHandler.enterCombatScene(mapNode.Node.enemies);
+                    GameHandler.gameHandler.enterCombatScene(mapNode.Node.enemies);
                     GroupXP.groupXPValue += 4400;
                     break;
                 case NodeType.RestSite:
-                    //GameHandler.gameHandler.enterRestScene();
+                    GameHandler.gameHandler.enterRestScene();
                     break;
                 case NodeType.RandomEvent:
                     GroupXP.groupXPValue += 1000;
