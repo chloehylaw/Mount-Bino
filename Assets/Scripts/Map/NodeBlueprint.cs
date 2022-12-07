@@ -8,7 +8,8 @@ namespace Map
 		EliteEnemy,
 		RestSite,
 		RandomEvent,
-		Boss
+		Boss,
+		SpecialistEnemy
 	}
 }
 

@@ -17,17 +17,22 @@ namespace Map
 			{
 				var mapJson = PlayerPrefs.GetString("Map");
 				var map = JsonConvert.DeserializeObject<Map>(mapJson);
+				
 				// using this instead of .Contains()
 				if (map.path.Any(p => p.Equals(map.GetBossNode().point)))
 				{
 					// payer has already reached the boss, generate a new map
 					GenerateNewMap();
+					Debug.Log("Here");
 				}
 				else
 				{
 					CurrentMap = map;
 					// player has not reached the boss yet, load the current map
 					view.ShowMap(map);
+					
+					GroupXP.groupXPValue = PlayerPrefs.GetInt("GroupXP");
+
 				}
 			}
 			else
@@ -42,6 +47,8 @@ namespace Map
 			CurrentMap = map;
 			// Debug.Log(map.ToJson());
 			view.ShowMap(map);
+
+			GroupXP.groupXPValue = 0;
 		}
 
 		public void SaveMap()
@@ -50,6 +57,7 @@ namespace Map
 
 			var json = JsonConvert.SerializeObject(CurrentMap);
 			PlayerPrefs.SetString("Map", json);
+			PlayerPrefs.SetInt("GroupXP", GroupXP.groupXPValue);
 			PlayerPrefs.Save();
 		}
 

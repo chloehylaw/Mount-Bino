@@ -2,6 +2,7 @@
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using RandomEvents;
 using UnityEngine;
 
 namespace Map
@@ -15,6 +16,8 @@ namespace Map
 		public readonly NodeType nodeType;
 		public readonly string blueprintName;
 		public Vector2 position;
+		public List<Creature> enemies;
+		public List<RandomEvent> events;
 
 		public Node(NodeType nodeType, string blueprintName, Point point)
 		{
@@ -22,7 +25,7 @@ namespace Map
 			this.blueprintName = blueprintName;
 			this.point = point;
 		}
-
+	
 		public void AddIncoming(Point p)
 		{
 			if (incoming.Any(element => element.Equals(p)))

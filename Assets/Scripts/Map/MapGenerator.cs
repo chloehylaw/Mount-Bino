@@ -8,13 +8,13 @@ namespace Map
     {
         private static MapConfig config;
 
-        private static readonly List<NodeType> RandomNodes = new List<NodeType> {NodeType.RandomEvent, NodeType.MinorEnemy, NodeType.RestSite};
+        private static readonly List<NodeType> RandomNodes = new List<NodeType> {NodeType.RandomEvent, NodeType.MinorEnemy, NodeType.SpecialistEnemy};
 
         private static List<float> layerDistances;
         private static List<List<Point>> paths;
         // ALL nodes by layer:
         private static readonly List<List<Node>> nodes = new List<List<Node>>();
-
+        
         public static Map GetMap(MapConfig conf)
         {
             if (conf == null)
@@ -77,6 +77,27 @@ namespace Map
                 {
                     position = new Vector2(-offset + i * layer.nodesApartDistance, GetDistanceToLayer(layerIndex))
                 };
+                if (nodeType == NodeType.MinorEnemy)
+                {
+                    node.enemies = GameHandler.gameHandler.minorEnemyEncounters[Random.Range(0, GameHandler.gameHandler.minorEnemyEncounters.Count)];
+                }
+                if (nodeType == NodeType.EliteEnemy)
+                {
+                    node.enemies = GameHandler.gameHandler.eliteEnemyEncounters[Random.Range(0, GameHandler.gameHandler.eliteEnemyEncounters.Count)];
+                }
+                if (nodeType == NodeType.SpecialistEnemy)
+                {
+                    node.enemies = GameHandler.gameHandler.specialistEnemyEncounters[Random.Range(0, GameHandler.gameHandler.specialistEnemyEncounters.Count)];
+                }
+                if (nodeType == NodeType.Boss)
+                {
+                    node.enemies = GameHandler.gameHandler.bossEnemyEncounters[Random.Range(0, GameHandler.gameHandler.bossEnemyEncounters.Count)];
+                }
+                if (nodeType == NodeType.RandomEvent)
+                {
+                    
+                }
+
                 nodesOnThisLayer.Add(node);
             }
 

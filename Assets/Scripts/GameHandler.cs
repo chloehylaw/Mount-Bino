@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using RandomEvents;
+using RandomEvents;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour
 {
@@ -12,6 +15,14 @@ public class GameHandler : MonoBehaviour
     public Creature Rogue;
     public Creature Wizard;
     public Creature Cleric;
+    
+    public List<CombatEncounter> minorEnemyEncounters;
+    public List<CombatEncounter> eliteEnemyEncounters;
+    public List<CombatEncounter> specialistEnemyEncounters;
+    public List<CombatEncounter> bossEnemyEncounters;
+
+    public List<RandomEventEncounter> eventEncounters;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +39,28 @@ public class GameHandler : MonoBehaviour
         CombatHandler.combatHandler.StartCombat(Party, Enemies);
     }
 
+    public void enterCombatScene (List<Creature> enemies)
+    {
+        Enemies = enemies;
+        SceneManager.LoadScene("Combat");
+        CombatHandler.combatHandler.StartCombat(Party, Enemies);
+    }
+
+    public void enterRestScene ()
+    {
+        SceneManager.LoadScene("RestSite"); 
+    }
+
+    public void enterEventScene ()
+    {
+        SceneManager.LoadScene("RandomEvent");
+    }
+
+    public void enterMapScene ()
+    {
+        SceneManager.LoadScene("Map");
+    }
+    
     // Update is called once per frame
     void Update()
     {

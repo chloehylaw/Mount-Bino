@@ -70,20 +70,30 @@ namespace Map
             switch (mapNode.Node.nodeType)
             {
                 case NodeType.MinorEnemy:
+                    GroupXP.groupXPValue += 1000;
+                    //GameHandler.gameHandler.enterCombatScene(mapNode.Node.enemies);
                     break;
                 case NodeType.EliteEnemy:
+                    GroupXP.groupXPValue += 2000;
                     break;
-                case NodeType.RestSite:
-                    SceneManager.LoadScene("RestSite");
+                case NodeType.SpecialistEnemy:
+                    GroupXP.groupXPValue += 3000;
                     break;
                 case NodeType.Boss:
+                    GroupXP.groupXPValue += 4400;
+                    break;
+                case NodeType.RestSite:
+                    //GameHandler.gameHandler.enterRestScene(); 
                     break;
                 case NodeType.RandomEvent:
-                    SceneManager.LoadScene("RandomEvent");
+                    GroupXP.groupXPValue += 1000;
+                    GameHandler.gameHandler.enterEventScene();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+            PlayerPrefs.SetInt("GroupXP", GroupXP.groupXPValue);
+            PlayerPrefs.Save();
         }
 
         private void PlayWarningThatNodeCannotBeAccessed()
