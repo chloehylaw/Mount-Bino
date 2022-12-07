@@ -20,7 +20,7 @@ public class CombatButton : MonoBehaviour
     public void EndTurn()
     {
         button.interactable = false;
-        CombatHandler.combatHandler.AdvanceTurn();
+        //CombatHandler.combatHandler.AdvanceTurn();
     }
 
 
