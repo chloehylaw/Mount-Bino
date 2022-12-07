@@ -9,11 +9,6 @@ public class EndTurnAction : Action
         sourceCreature = gameObject.GetComponent<Creature>();
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     public override void Use(Creature target)
     {

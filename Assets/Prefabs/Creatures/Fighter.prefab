@@ -67,19 +67,13 @@ MonoBehaviour:
   Actions:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
   - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
-  - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
-  - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
-  - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
   BonusActions:
   - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
   - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
-  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
-  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
-  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
-  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
-  FreeActions: []
+  FreeActions:
+  - {fileID: 7791889534279554537, guid: d002a25dd436fd04db4d567f83c7db7b, type: 3}
   EndTurnActions:
-  - {fileID: 0}
+  - {fileID: 2120337553009906039, guid: a6791e1b6fa0ebc4c88f9587e50ee419, type: 3}
   Spells: []
   Statuses: []
   EquippedWeapon: {fileID: 0}

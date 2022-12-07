@@ -61,8 +61,8 @@ MonoBehaviour:
   IsProficientCharismaSaves: 0
   ArmorClass: 12
   Name: The Wizard
-  MaxHealth: 19
-  CurrentHealth: 19
+  MaxHealth: 25
+  CurrentHealth: 25
   ProficiencyBonus: 3
   Actions:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}

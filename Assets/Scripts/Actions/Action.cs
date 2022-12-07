@@ -12,15 +12,10 @@ public abstract class Action : MonoBehaviour
     public string Name;
     //public Button button;
 
-    void Awake()
-    {
-        sourceCreature = gameObject.GetComponent<Creature>();
-
-    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        sourceCreature = gameObject.GetComponent<Creature>();
     }
 
     public abstract void Use(Creature target);

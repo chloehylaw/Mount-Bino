@@ -66,10 +66,6 @@ public abstract class Creature : MonoBehaviour
     // Start is called before the first frame update
     void Start() 
     {
-        //StatusEffectACBonus = new DieExpression("0");
-        //StatusEffectAttackBonus = new DieExpression("0");
-        //StatusEffectSaveBonus = new DieExpression("0");
-        //StatusEffectCheckBonus = new DieExpression("0");
         foreach (var action in Actions)
         {
             action.sourceCreature = this;

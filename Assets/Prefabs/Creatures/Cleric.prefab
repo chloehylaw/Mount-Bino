@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Strength: 3
   Dexterity: 1
-  Constitution: 1
+  Constitution: 2
   Intelligence: 0
   Wisdom: 4
   Charisma: -1
@@ -61,8 +61,8 @@ MonoBehaviour:
   IsProficientCharismaSaves: 0
   ArmorClass: 16
   Name: The Cleric
-  MaxHealth: 31
-  CurrentHealth: 31
+  MaxHealth: 36
+  CurrentHealth: 36
   ProficiencyBonus: 3
   Actions:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
