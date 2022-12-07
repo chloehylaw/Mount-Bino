@@ -22,15 +22,15 @@ public class BonusActionsContainer : ActionsContainer
     public void Initialize(Creature creature)
     {
         this.enabled = true;
-        
+        bonusActionsList = creature.BonusActions;
         if (bonusActionsList.Count <= 0)
         {
             this.enabled = false;
             var something = GetComponent<RectTransform>();
-            something.sizeDelta = new Vector2(0, something.sizeDelta.y);
+            something.sizeDelta = new Vector2(0, 0);
         } else
         {
-            bonusActionsList = creature.BonusActions;
+            
 
             foreach (var bonusAction in bonusActionsList)
             {

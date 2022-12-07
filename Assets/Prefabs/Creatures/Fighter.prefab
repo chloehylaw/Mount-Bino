@@ -50,6 +50,12 @@ MonoBehaviour:
   Intelligence: -1
   Wisdom: 1
   Charisma: 0
+  IsProficientStrengthSaves: 0
+  IsProficientDexteritySaves: 0
+  IsProficientConstitutionSaves: 0
+  IsProficientIntelligenceSaves: 0
+  IsProficientWisdomSaves: 0
+  IsProficientCharismaSaves: 0
   ArmorClass: 18
   Name: The Fighter
   MaxHealth: 49
@@ -60,7 +66,7 @@ MonoBehaviour:
   - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
   - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
-  - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
+  - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
   BonusActions:
   - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
   - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
@@ -68,6 +74,9 @@ MonoBehaviour:
   - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
   - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
   - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  FreeActions: []
+  EndTurnActions:
+  - {fileID: 2120337553009906039, guid: a6791e1b6fa0ebc4c88f9587e50ee419, type: 3}
   Spells: []
   Statuses: []
   EquippedWeapon: {fileID: 0}
@@ -86,3 +95,5 @@ MonoBehaviour:
   StatusEffectCheckAdvantage: 0
   StatusEffectAttackAdvantage: 0
   StatusEffectSaveAdvantage: 0
+  StatusEffectAttackAgainstAdvantage: 0
+  StatusEffectACBonus: 0

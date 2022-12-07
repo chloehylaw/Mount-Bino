@@ -50,6 +50,12 @@ MonoBehaviour:
   Intelligence: 4
   Wisdom: 2
   Charisma: 1
+  IsProficientStrengthSaves: 0
+  IsProficientDexteritySaves: 0
+  IsProficientConstitutionSaves: 0
+  IsProficientIntelligenceSaves: 0
+  IsProficientWisdomSaves: 0
+  IsProficientCharismaSaves: 0
   ArmorClass: 12
   Name: The Wizard
   MaxHealth: 19
@@ -57,5 +63,31 @@ MonoBehaviour:
   ProficiencyBonus: 3
   Actions:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
-  Spells: []
+  BonusActions: []
+  FreeActions: []
+  EndTurnActions:
+  - {fileID: 2120337553009906039, guid: a6791e1b6fa0ebc4c88f9587e50ee419, type: 3}
+  Spells:
+  - {fileID: 3414501828225865761, guid: a4a3498a9b2b09b4f99b27a9a7a58100, type: 3}
   Statuses: []
+  EquippedWeapon: {fileID: 0}
+  StatusEffectStrengthCheckAdvantage: 0
+  StatusEffectDexterityCheckAdvantage: 0
+  StatusEffectConstitutionCheckAdvantage: 0
+  StatusEffectIntelligenceCheckAdvantage: 0
+  StatusEffectWisdomCheckAdvantage: 0
+  StatusEffectCharismaCheckAdvantage: 0
+  StatusEffectStrengthSaveAdvantage: 0
+  StatusEffectDexteritySaveAdvantage: 0
+  StatusEffectConstitutionSaveAdvantage: 0
+  StatusEffectIntelligenceSaveAdvantage: 0
+  StatusEffectWisdomSaveAdvantage: 0
+  StatusEffectCharismaSaveAdvantage: 0
+  StatusEffectCheckAdvantage: 0
+  StatusEffectAttackAdvantage: 0
+  StatusEffectSaveAdvantage: 0
+  StatusEffectAttackAgainstAdvantage: 0
+  StatusEffectCheckBonus: {fileID: 0}
+  StatusEffectAttackBonus: {fileID: 0}
+  StatusEffectSaveBonus: {fileID: 0}
+  StatusEffectACBonus: {fileID: 0}

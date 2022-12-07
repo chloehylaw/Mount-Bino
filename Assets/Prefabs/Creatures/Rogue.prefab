@@ -50,6 +50,12 @@ MonoBehaviour:
   Intelligence: 1
   Wisdom: 2
   Charisma: 2
+  IsProficientStrengthSaves: 0
+  IsProficientDexteritySaves: 0
+  IsProficientConstitutionSaves: 0
+  IsProficientIntelligenceSaves: 0
+  IsProficientWisdomSaves: 0
+  IsProficientCharismaSaves: 0
   ArmorClass: 15
   Name: The Rogue
   MaxHealth: 31
@@ -57,5 +63,27 @@ MonoBehaviour:
   ProficiencyBonus: 3
   Actions:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
+  BonusActions: []
+  FreeActions: []
+  EndTurnActions:
+  - {fileID: 2120337553009906039, guid: a6791e1b6fa0ebc4c88f9587e50ee419, type: 3}
   Spells: []
   Statuses: []
+  EquippedWeapon: {fileID: 0}
+  StatusEffectStrengthCheckAdvantage: 0
+  StatusEffectDexterityCheckAdvantage: 0
+  StatusEffectConstitutionCheckAdvantage: 0
+  StatusEffectIntelligenceCheckAdvantage: 0
+  StatusEffectWisdomCheckAdvantage: 0
+  StatusEffectCharismaCheckAdvantage: 0
+  StatusEffectStrengthSaveAdvantage: 0
+  StatusEffectDexteritySaveAdvantage: 0
+  StatusEffectConstitutionSaveAdvantage: 0
+  StatusEffectIntelligenceSaveAdvantage: 0
+  StatusEffectWisdomSaveAdvantage: 0
+  StatusEffectCharismaSaveAdvantage: 0
+  StatusEffectCheckAdvantage: 0
+  StatusEffectAttackAdvantage: 0
+  StatusEffectSaveAdvantage: 0
+  StatusEffectAttackAgainstAdvantage: 0
+  StatusEffectACBonus: 0

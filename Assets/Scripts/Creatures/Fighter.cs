@@ -13,7 +13,12 @@ public class Fighter : Creature
     public override void BonusAct(string bonusAction, Creature target)
     {
     }
-
+    public override void FreeAct(string freeAction, Creature target)
+    {
+    }
+    public override void EndTurnAct(string endTurnAction, Creature target)
+    {
+    }
 
     public void Attack_Temp(Creature target)
     {

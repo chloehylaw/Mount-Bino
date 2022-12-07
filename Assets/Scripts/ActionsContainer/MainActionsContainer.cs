@@ -25,16 +25,16 @@ public class MainActionsContainer : ActionsContainer
     public void Initialize(Creature creature)
     {
         this.enabled = true;
-
+        actionsList = creature.Actions;
         if (actionsList.Count <= 0)
         {
             this.enabled = false;
             var something = GetComponent<RectTransform>();
-            something.sizeDelta = new Vector2(0, something.sizeDelta.y);
+            something.sizeDelta = new Vector2(0, 0);
         }
         else
         {
-            actionsList = creature.Actions;
+            
 
             foreach (var action in actionsList)
             {

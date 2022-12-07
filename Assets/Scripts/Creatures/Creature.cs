@@ -27,8 +27,8 @@ public abstract class Creature : MonoBehaviour
     public int ProficiencyBonus;
     public List<Action> Actions;
     public List<BonusAction> BonusActions;
-    public List<BonusAction> FreeActions;
-    public List<BonusAction> EndTurnActions;
+    public List<FreeAction> FreeActions;
+    public List<EndTurnAction> EndTurnActions;
     public List<Spell> Spells;
     public List<Status> Statuses;
     public Weapon EquippedWeapon;
@@ -55,7 +55,7 @@ public abstract class Creature : MonoBehaviour
     public DieExpression StatusEffectCheckBonus;
     public DieExpression StatusEffectAttackBonus;
     public DieExpression StatusEffectSaveBonus;
-    public int StatusEffectACBonus;
+    public DieExpression StatusEffectACBonus;
 
 
     internal abstract int GetSpellAttackBonus();
@@ -69,12 +69,18 @@ public abstract class Creature : MonoBehaviour
         {
             action.sourceCreature = this;
         }
-
         foreach (var bonusAction in BonusActions)
         {
             bonusAction.sourceCreature = this;
         }
-
+        foreach (var freeAction in FreeActions)
+        {
+            freeAction.sourceCreature = this;
+        }
+        foreach (var endTurnAction in EndTurnActions)
+        {
+            endTurnAction.sourceCreature = this;
+        }
     }
     public int GetArmorClass()
     {
@@ -119,6 +125,8 @@ public abstract class Creature : MonoBehaviour
         }
     }
     public abstract void BonusAct(string bonusAction, Creature target);
+    public abstract void FreeAct(string bonusAction, Creature target);
+    public abstract void EndTurnAct(string bonusAction, Creature target);
     public void StartTurn()
     {
         OnStartTurn?.Invoke();

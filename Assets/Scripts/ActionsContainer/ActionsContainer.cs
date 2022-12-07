@@ -13,6 +13,7 @@ public class ActionsContainer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //this.enabled = true;
         StartCoroutine(Ligma());
         // subscribe to event in combat handler 
         // public event Action<Creature> OnStartTurn -> in combat handler
