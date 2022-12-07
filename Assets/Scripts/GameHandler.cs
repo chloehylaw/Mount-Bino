@@ -37,6 +37,7 @@ public class GameHandler : MonoBehaviour
         Cleric = Party[1];
         Rogue = Party[2];
         Wizard = Party[3];
+        MousePosition2D.OnMouseClick += testMouse;
         //CombatHandler.combatHandler.StartCombat(Party, Enemies);
     }
 
@@ -63,6 +64,10 @@ public class GameHandler : MonoBehaviour
         CombatHandler.combatHandler.StartCombat(Party, Enemies);
     }
 
+    public void testMouse(Creature c)
+    {
+        Debug.Log(c.Name);
+    }
     public void enterEventScene (string eventPath)
     {
         Debug.Log(eventPath);

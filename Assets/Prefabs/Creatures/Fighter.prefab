@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1251229256597412481}
   - component: {fileID: 2120060907297601215}
   - component: {fileID: -3221593171804886759}
+  - component: {fileID: 7975582866879667038}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Untagged
@@ -175,3 +176,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &7975582866879667038
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388127510116924463}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.21}
+  m_SpriteTilingProperty:
+    border: {x: 1.4399999, y: 2.12, z: 2.03, w: 1.5999999}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.6, y: 12.8}
+    newSize: {x: 9.6, y: 12.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.86, y: 9.15}
+  m_EdgeRadius: 0
