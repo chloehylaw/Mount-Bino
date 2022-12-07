@@ -7,6 +7,7 @@ public class Fighter : Creature
     
     public override void Act(string action, Creature target)
     {
+
     }
 
 
@@ -26,27 +27,12 @@ public class Fighter : Creature
         throw new System.NotImplementedException();
     }
 
-    public override int GetArmorClass()
-    {
-        return ArmorClass;
-    }
-
-    public override int GetAttackBonus()
-    {
-        return Strength + ProficiencyBonus;
-    }
 
     public override int GetDamageBonus()
     {
         return Strength + 2; //Dueling
     }
 
-
-    public override void EndTurn()
-    {
-        TickStatuses();
-        Debug.Log("end turn");
-    }
 
     //public void TakeDamage(int damage)
     //{
@@ -55,15 +41,6 @@ public class Fighter : Creature
     
     //}
 
-    public override void TickStatuses()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    internal override int GetInitiativeBonus()
-    {
-        return Dexterity;
-    }
 
     // Start is called before the first frame update
     void Awake()
@@ -89,6 +66,6 @@ public class Fighter : Creature
 
     internal override int GetSpellAttackBonus()
     {
-        throw new System.NotImplementedException();
+        return Intelligence + ProficiencyBonus;
     }
 }
