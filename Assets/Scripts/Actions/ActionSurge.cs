@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ActionSurge : FreeAction
 {
-    public override void Use()
-    {
-        sourceCreature.IsActionSurging = true;
-        sourceCreature.HasActionSurge = false;
-    }
+	public override void Use()
+	{
+		sourceCreature.IsActionSurging = true;
+		sourceCreature.HasActionSurge = false;
+	}
 
 
 }
