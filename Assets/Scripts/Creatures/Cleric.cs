@@ -63,7 +63,6 @@ public class Cleric : Creature
     public override void ShortRest()
     {
         base.ShortRest();
-        
         Debug.Log("Getting some EELing.");
     }
 }

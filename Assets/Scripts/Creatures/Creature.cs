@@ -142,6 +142,12 @@ public abstract class Creature : MonoBehaviour
     public virtual void ShortRest()
     {
         Debug.Log("The party rest here");
+        int healing = MaxHealth/2;
+        Heal(healing);
+        if (CurrentHealth > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
     }
 
     public abstract void Act(string action, Creature target);
