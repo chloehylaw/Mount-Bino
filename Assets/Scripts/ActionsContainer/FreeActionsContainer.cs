@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Creatures;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

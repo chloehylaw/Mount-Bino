@@ -653,7 +653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &308638517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,10 +2772,7 @@ MonoBehaviour:
   Answer: {fileID: 1875774009}
   AnswerOptionA: {fileID: 1490747825}
   AnswerOptionB: {fileID: 787687985}
-  Fighter: {fileID: 1798660114}
-  Rogue: {fileID: 223201219}
-  Wizard: {fileID: 1395222699}
-  Cleric: {fileID: 1832348392}
+  mapButton: {fileID: 0}
 --- !u!4 &1103228174
 Transform:
   m_ObjectHideFlags: 0
@@ -2871,7 +2868,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &1110526152
 RectTransform:

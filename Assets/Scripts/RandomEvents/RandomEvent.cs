@@ -10,11 +10,7 @@ namespace RandomEvents
         public GameObject Answer;
         public GameObject AnswerOptionA;
         public GameObject AnswerOptionB;
-
-        public GameObject Fighter;
-        public GameObject Rogue;
-        public GameObject Wizard;
-        public GameObject Cleric;
+        public GameObject mapButton;
 
         private TextMeshProUGUI optionA;
         private TextMeshProUGUI optionB;
@@ -287,29 +283,9 @@ namespace RandomEvents
         private void displayAnswer ()
         {
             Setting.SetActive(false);
-            Answer.SetActive(true);
+            Answer.SetActive(true); 
+            mapButton.SetActive(true);
         }
-
-        public void selectFighter ()
-        {
-            // Get Fighter status
-        }
-
-        public void selectRogue ()
-        {
-            // Get Rogue status
-        }
-
-        public void selectWizard ()
-        {
-            // Get Wizard status
-        }
-
-        public void selectCleric ()
-        {
-            // Get Cleric status
-        }
-        
         public void clickMap ()
         {
             GameHandler.gameHandler.EnterMapScene();

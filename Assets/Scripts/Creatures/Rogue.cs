@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Rogue : Creature
+namespace Creatures
 {
     public bool HasUncannyDodge;
     
@@ -29,25 +25,40 @@ public class Rogue : Creature
     {
         if(HasUncannyDodge)
         {
-            base.TakeDamage(damage / 2);
-            HasUncannyDodge = false;
+            this.Actions[0].Use(target);
         }
-        else
-            base.TakeDamage(damage);
-
-    }
 
 
-    internal override int GetSpellAttackBonus()
-    {
-        throw new System.NotImplementedException();
-    }
+        public override void BonusAct(string bonusAction, Creature target)
+        {
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        }
+        public override void FreeAct(string freeAction, Creature target)
+        {
 
-    }
+        }
+        public override void ShortRest()
+        {
+            base.ShortRest();
+        
+        }
+        public override void Die()
+        {
+            throw new System.NotImplementedException();
+        }
+
+
+        public override void EnterDying()
+        {
+            throw new System.NotImplementedException();
+        }
+
+
+
+        public override int GetDamageBonus()
+        {
+            return Dexterity + Dice.dice.Roll(3, 6);
+        }
 
    public override void ShortRest()
     {

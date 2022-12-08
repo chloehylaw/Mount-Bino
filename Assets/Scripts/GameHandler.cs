@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Creatures;
 using RandomEvents;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -54,6 +55,7 @@ public class GameHandler : MonoBehaviour
         // Load overlay
         // Debug.Log(SceneManager.GetActiveScene().name);
         overlay.SetActive(currentSceneName != "MainMenu");
+
     }
     public void enterCombatScene (string enemies)
     {

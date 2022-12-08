@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Cleric : Creature
+namespace Creatures
 {
     public bool HasChannelDivinity;
     public int MaxSpellPoints;
@@ -14,35 +10,35 @@ public class Cleric : Creature
     }
 
 
-    public override void EnterDying()
-    {
-        throw new System.NotImplementedException();
-    }
+        public override void EnterDying()
+        {
+            throw new System.NotImplementedException();
+        }
 
 
-    public override int GetDamageBonus()
-    {
-        return Strength;
-    }
+        public override int GetDamageBonus()
+        {
+            return Strength;
+        }
 
-    public new int GetSpellSaveDC()
-    {
-        return 8 + Wisdom + ProficiencyBonus;
-    }
+        public new int GetSpellSaveDC()
+        {
+            return 8 + Wisdom + ProficiencyBonus;
+        }
 
-    //public override void TakeDamage(int damage)
-    //{
-    //    CurrentHealth -= damage;
-    //}
+        //public override void TakeDamage(int damage)
+        //{
+        //    CurrentHealth -= damage;
+        //}
 
-    internal override int GetSpellAttackBonus()
-    {
-        return Wisdom + ProficiencyBonus;
-    }
+        internal override int GetSpellAttackBonus()
+        {
+            return Wisdom + ProficiencyBonus;
+        }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        // Start is called before the first frame update
+        void Start()
+        {
         
     }
     public override void ShortRest()
@@ -51,4 +47,5 @@ public class Cleric : Creature
         HasChannelDivinity = true;
     }
     
+    }
 }
