@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour
 {
+    public GameObject overlay;
     public static GameHandler gameHandler;
     public List<Creature> Party;
     public List<Creature> Enemies;
@@ -22,6 +23,11 @@ public class GameHandler : MonoBehaviour
 
     public List<string> eventEncounters;
 
+    private string currentSceneName;
+    
+    private bool enteredMap;
+    private bool enteredStats;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +47,14 @@ public class GameHandler : MonoBehaviour
         //CombatHandler.combatHandler.StartCombat(Party, Enemies);
     }
 
+    public void Update()
+    {
+        currentSceneName = SceneManager.GetActiveScene().name;
+        
+        // Load overlay
+        // Debug.Log(SceneManager.GetActiveScene().name);
+        overlay.SetActive(currentSceneName != "MainMenu");
+    }
     public void enterCombatScene (string enemies)
     {
         Debug.Log(enemies);
@@ -90,19 +104,99 @@ public class GameHandler : MonoBehaviour
         SceneManager.LoadScene("RestSite"); 
     }
 
-    public void enterEventScene ()
+    // event to stats or map back forth works
+    
+    public void EnterMapScene ()
     {
-        SceneManager.LoadScene("RandomEvent");
-    }
+        if (currentSceneName == "Map")
+        {
+            // do nothing
+        }
+        else if (currentSceneName == "Map" && enteredMap == true)
+        {
+            SceneManager.UnloadSceneAsync("Map");
+            Destroy(GameObject.Find("/OuterMapParent"));
+            enteredMap = false;
+        }
+        else
+        {
+            if (enteredMap == false)
+            {
+                if (currentSceneName == "RandomEvent")
+                {
+                    RandomEventHandler.randomEventHandler.currentRandomEvent.SetActive(false);
+                }
 
-    public void enterMapScene ()
-    {
-        SceneManager.LoadScene("Map");
+                if (currentSceneName == "Stats")
+                {
+                    GameObject.Find("/StatsInfo").SetActive(false);
+                }
+                SceneManager.LoadScene("Map", LoadSceneMode.Additive);
+                enteredMap = true;
+            }
+            else
+            {
+                if (currentSceneName == "RandomEvent")
+                {
+                    RandomEventHandler.randomEventHandler.currentRandomEvent.SetActive(true);
+                }
+                if (currentSceneName == "Stats")
+                {
+                    GameObject.Find("/StatsInfo").SetActive(true);
+                }
+                SceneManager.UnloadSceneAsync("Map");
+                Destroy(GameObject.Find("/OuterMapParent"));
+                enteredMap = false;
+            }
+        }
     }
     
-    // Update is called once per frame
-    void Update()
+    public void EnterStatsScene()
     {
+        if (currentSceneName == "Stats" && enteredStats == false)
+        {
+            // do nothing
+        }
+        else if (currentSceneName == "Stats" && enteredStats == true)
+        {
+            SceneManager.UnloadSceneAsync("Stats");
+            enteredStats = false;
+        }
+        else
+        {
+            if (enteredStats == false)
+            {
+                if (currentSceneName == "RandomEvent")
+                {
+                    RandomEventHandler.randomEventHandler.currentRandomEvent.SetActive(false);
+                }
+
+                if (currentSceneName == "Map")
+                {
+                    GameObject.Find("/OuterMapParent").SetActive(false);
+                    GameObject.Find("/LegendObjects").SetActive(false);
+                }
+
+                SceneManager.LoadScene("Stats",  LoadSceneMode.Additive);
+                enteredStats = true;
+            }
+            else
+            {
+                if (currentSceneName == "RandomEvent")
+                {
+                    RandomEventHandler.randomEventHandler.currentRandomEvent.SetActive(true);
+                }
+
+                if (currentSceneName == "Map")
+                {
+                    GameObject.Find("/OuterMapParent").SetActive(true);
+                    GameObject.Find("/LegendObjects").SetActive(true);
+                }
+
+                SceneManager.UnloadSceneAsync("Stats");
+                enteredStats = false;
+            }
+        }
         
     }
 }

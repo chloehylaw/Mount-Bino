@@ -39,7 +39,7 @@ public class HealthBar : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        slider.value = creature.CurrentHealth;
+        slider.value -= creature.CurrentHealth;
         healthText.text = creature.CurrentHealth + "/" + creature.MaxHealth;
        
     }

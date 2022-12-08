@@ -36,6 +36,8 @@ public abstract class Creature : MonoBehaviour
     public event System.Action OnEndTurn;
     public event System.Action<int> OnTakeDamage;
 
+    public bool inShortRest;        // becomes true on ShortRest() 
+
     public int StatusEffectStrengthCheckAdvantage = 0;
     public int StatusEffectDexterityCheckAdvantage = 0;
     public int StatusEffectConstitutionCheckAdvantage = 0;
@@ -114,9 +116,34 @@ public abstract class Creature : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        CurrentHealth -= damage;
-        OnTakeDamage?.Invoke(damage);
+        int trueDamage = damage;
+       // int overflow = 0;
+        CurrentHealth -= trueDamage;
+        if(CurrentHealth > MaxHealth)       // hp over max health
+        {
+            //overflow = CurrentHealth - MaxHealth;
+            //trueDamage += overflow;
+            CurrentHealth = MaxHealth;
+        }
+        if(CurrentHealth < 0)
+        {
+            //overflow = CurrentHealth * (-1);
+            //trueDamage -= overflow;
+            CurrentHealth = 0;
+        }
+        OnTakeDamage?.Invoke(trueDamage);
     }
+
+    public void Heal(int heal)
+    {
+        TakeDamage(heal * (-1));
+    }
+
+    public virtual void ShortRest()
+    {
+        Debug.Log("The party rest here");
+    }
+
     public abstract void Act(string action, Creature target);
     public void TickStatuses(int s)
     {

@@ -312,7 +312,7 @@ namespace RandomEvents
         
         public void clickMap ()
         {
-            GameHandler.gameHandler.enterMapScene();
+            GameHandler.gameHandler.EnterMapScene();
         }
     }
 }
