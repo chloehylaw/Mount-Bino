@@ -327,15 +327,12 @@ namespace Map
             case 1:
 	            //Debug.Log("Level 1");
 	            return allMapConfigs[1];
-	            break;
             case 2:
 	            //Debug.Log("Level 2");
 	            return allMapConfigs[2];
-	            break;
             case 3:
 	            //Debug.Log("Level 3");
 	            return allMapConfigs[3];
-	            break;
             default:
 	            LevelDisplay.levelValue = 0;
 	            //Debug.Log("Default");
