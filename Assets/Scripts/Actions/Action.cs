@@ -10,15 +10,16 @@ public abstract class Action : MonoBehaviour
     [SerializeField] public List<int> sourcePositions;
     [SerializeField] public bool TargetsAllies;
     public string Name;
-    //public Button button;
+    public Button button;
 
     // Start is called before the first frame update
     void Start()
     {
         sourceCreature = gameObject.GetComponent<Creature>();
+        button = gameObject.GetComponent<Button>();
     }
 
-    public abstract void Use(Creature target);
+    public abstract void Use();
 
     // Update is called once per frame
     void Update()
