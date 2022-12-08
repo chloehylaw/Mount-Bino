@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Fighter : Creature
 {
-    
+    public bool IsActionSurging;
+    public bool HasActionSurge;
+    public bool HasSecondWind;
+    public bool HasSecondAttack;
     public override void Act(string action, Creature target)
     {
 
@@ -42,42 +45,10 @@ public class Fighter : Creature
         throw new System.NotImplementedException();
     }
 
-
     public override int GetDamageBonus()
     {
-        return Strength + 2; //Dueling
+        return Strength + StatusEffectDamageBonus;
     }
-
-
-    //public void TakeDamage(int damage)
-    //{
-        
-
-    
-    //}
-
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-        Strength = 4;
-        Dexterity = 1;
-        Constitution = 3;
-        Intelligence = -1;
-        Wisdom = 1;
-        Charisma = 0;
-        ArmorClass = 18;
-        MaxHealth = 49;
-        CurrentHealth = 49;
-        ProficiencyBonus = 3;
-        Name = "The Fighter";
-
-        //Actions = new List<Action>();
-    }
-    
-
-
-    
 
     internal override int GetSpellAttackBonus()
     {

@@ -6,7 +6,7 @@ namespace RestScene
     public class RestSite : MonoBehaviour
     {
 
-        private float timer = 10f;
+        private float timer = 3f;
         private TextMeshProUGUI timerSeconds; 
         void Start()
         {

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Cleric : Creature
 {
+    public bool HasChannelDivinity;
+    public int MaxSpellPoints;
+    public int CurrentSpellPoints;
     public override void Act(string action, Creature target)
     {
         this.Actions[0].Use(target);
@@ -15,9 +18,6 @@ public class Cleric : Creature
     }
 
     public override void FreeAct(string freeAction, Creature target)
-    {
-    }
-    public override void EndTurnAct(string endTurnAction, Creature target)
     {
     }
 
@@ -65,4 +65,10 @@ public class Cleric : Creature
         
     }
 
+    public override void ShortRest()
+    {
+        base.ShortRest();
+        
+        Debug.Log("Getting some EELing.");
+    }
 }
