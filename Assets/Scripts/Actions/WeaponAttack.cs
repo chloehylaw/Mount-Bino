@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Creatures;
 using UnityEngine;
 /// <summary>
 /// Weapon attacks. They use the creature's equipped weapon to determine range and damage.

@@ -1,71 +1,70 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Rogue : Creature
+namespace Creatures
 {
-    public bool HasUncannyDodge;
-    public override void Act(string action, Creature target)
+    public class Rogue : Creature
     {
-        this.Actions[0].Use(target);
-    }
-
-
-    public override void BonusAct(string bonusAction, Creature target)
-    {
-
-    }
-    public override void FreeAct(string freeAction, Creature target)
-    {
-
-    }
-    public override void ShortRest()
-    {
-        base.ShortRest();
-        
-    }
-    public override void Die()
-    {
-        throw new System.NotImplementedException();
-    }
-
-
-    public override void EnterDying()
-    {
-        throw new System.NotImplementedException();
-    }
-
-
-
-    public override int GetDamageBonus()
-    {
-        return Dexterity + Dice.dice.Roll(3, 6);
-    }
-
-   
-    public new void TakeDamage(int damage)
-    {
-        if(HasUncannyDodge)
+        public bool HasUncannyDodge;
+        public override void Act(string action, Creature target)
         {
-            base.TakeDamage(damage / 2);
-            HasUncannyDodge = false;
+            this.Actions[0].Use(target);
         }
-        else
-            base.TakeDamage(damage);
-
-    }
 
 
-    internal override int GetSpellAttackBonus()
-    {
-        throw new System.NotImplementedException();
-    }
+        public override void BonusAct(string bonusAction, Creature target)
+        {
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        }
+        public override void FreeAct(string freeAction, Creature target)
+        {
 
-    }
+        }
+        public override void ShortRest()
+        {
+            base.ShortRest();
+        
+        }
+        public override void Die()
+        {
+            throw new System.NotImplementedException();
+        }
+
+
+        public override void EnterDying()
+        {
+            throw new System.NotImplementedException();
+        }
+
+
+
+        public override int GetDamageBonus()
+        {
+            return Dexterity + Dice.dice.Roll(3, 6);
+        }
 
    
+        public new void TakeDamage(int damage)
+        {
+            if(HasUncannyDodge)
+            {
+                base.TakeDamage(damage / 2);
+                HasUncannyDodge = false;
+            }
+            else
+                base.TakeDamage(damage);
+
+        }
+
+
+        internal override int GetSpellAttackBonus()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+   
+    }
 }

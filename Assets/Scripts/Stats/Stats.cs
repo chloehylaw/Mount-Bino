@@ -36,12 +36,7 @@ namespace Stats
             wizardStats.text = GetWizardStats();
             clericStats.text = GetClericStats();
         }
-
-        public void clickMap ()
-        {
-            GameHandler.gameHandler.EnterMapScene();
-        }
-
+        
         private string GetFighterStats()
         {
             var health = GameHandler.gameHandler.Fighter.CurrentHealth;

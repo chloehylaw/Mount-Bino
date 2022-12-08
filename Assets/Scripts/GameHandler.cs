@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Creatures;
 using RandomEvents;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -54,6 +55,7 @@ public class GameHandler : MonoBehaviour
         // Load overlay
         // Debug.Log(SceneManager.GetActiveScene().name);
         overlay.SetActive(currentSceneName != "MainMenu");
+
     }
     public void enterCombatScene (string enemies)
     {
@@ -82,6 +84,7 @@ public class GameHandler : MonoBehaviour
     {
         Debug.Log(c.Name);
     }
+    
     public void enterEventScene (string eventPath)
     {
         Debug.Log(eventPath);
@@ -120,100 +123,12 @@ public class GameHandler : MonoBehaviour
         SceneManager.LoadScene("RestSite");
         //RestSceneHandler.restSceneHandler.StartRest();
     }
+   
 
     // event to stats or map back forth works
     
     public void EnterMapScene ()
     {
-        if (currentSceneName == "Map")
-        {
-            // do nothing
-        }
-        else if (currentSceneName == "Map" && enteredMap == true)
-        {
-            SceneManager.UnloadSceneAsync("Map");
-            Destroy(GameObject.Find("/OuterMapParent"));
-            enteredMap = false;
-        }
-        else
-        {
-            if (enteredMap == false)
-            {
-                if (currentSceneName == "RandomEvent")
-                {
-                    RandomEventHandler.randomEventHandler.currentRandomEvent.SetActive(false);
-                }
-
-                if (currentSceneName == "Stats")
-                {
-                    GameObject.Find("/StatsInfo").SetActive(false);
-                }
-                SceneManager.LoadScene("Map", LoadSceneMode.Additive);
-                enteredMap = true;
-            }
-            else
-            {
-                if (currentSceneName == "RandomEvent")
-                {
-                    RandomEventHandler.randomEventHandler.currentRandomEvent.SetActive(true);
-                }
-                if (currentSceneName == "Stats")
-                {
-                    GameObject.Find("/StatsInfo").SetActive(true);
-                }
-                SceneManager.UnloadSceneAsync("Map");
-                Destroy(GameObject.Find("/OuterMapParent"));
-                enteredMap = false;
-            }
-        }
-    }
-    
-    public void EnterStatsScene()
-    {
-        if (currentSceneName == "Stats" && enteredStats == false)
-        {
-            // do nothing
-        }
-        else if (currentSceneName == "Stats" && enteredStats == true)
-        {
-            SceneManager.UnloadSceneAsync("Stats");
-            enteredStats = false;
-        }
-        else
-        {
-            if (enteredStats == false)
-            {
-                if (currentSceneName == "RandomEvent")
-                {
-                    RandomEventHandler.randomEventHandler.currentRandomEvent.SetActive(false);
-                }
-
-                if (currentSceneName == "Map")
-                {
-                    GameObject.Find("/OuterMapParent").SetActive(false);
-                    GameObject.Find("/LegendObjects").SetActive(false);
-                }
-
-                SceneManager.LoadScene("Stats",  LoadSceneMode.Additive);
-                enteredStats = true;
-            }
-            else
-            {
-                if (currentSceneName == "RandomEvent")
-                {
-                    RandomEventHandler.randomEventHandler.currentRandomEvent.SetActive(true);
-                }
-
-                if (currentSceneName == "Map")
-                {
-                    GameObject.Find("/OuterMapParent").SetActive(true);
-                    GameObject.Find("/LegendObjects").SetActive(true);
-                }
-
-                SceneManager.UnloadSceneAsync("Stats");
-                enteredStats = false;
-            }
-        }
-        
+        SceneManager.LoadScene("Map");
     }
 }

@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour
 {
     public MusicControllerMenu musicControllerMenu;
 
+    [SerializeField] private AudioSource selectSoundEffect;
+
     public Animator transition;
 
     public float transitionTime = 1f;
@@ -20,18 +22,21 @@ public class MainMenu : MonoBehaviour
     }
     public void StartCampaign()
     {
+        selectSoundEffect.Play();
         Destroy(musicControllerMenu);
         StartCoroutine(LoadLevel(3));
         Debug.Log("Starting Campaign + Destroy Music");
     }
     public void Options()
     {
+        selectSoundEffect.Play();
         StartCoroutine(LoadLevel(2));
         Debug.Log("Opening Options");
     }
 
     public void Credits()
     {
+        selectSoundEffect.Play();
         Debug.Log("Opening Credits");
         StartCoroutine(LoadLevel(1));
     }
