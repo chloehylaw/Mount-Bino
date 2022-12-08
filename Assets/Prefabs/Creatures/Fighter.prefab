@@ -68,15 +68,15 @@ MonoBehaviour:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
   - {fileID: 1573169135205793207, guid: 84f34bb332e1c844a803a178464cf72d, type: 3}
   BonusActions:
-  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
-  - {fileID: 4650172077410354245, guid: 3c31cb849d5b3a3429c7509333494a93, type: 3}
+  - {fileID: -1361368505704500620, guid: b944334a0cb02f24eb296f19205b4b74, type: 3}
   FreeActions:
-  - {fileID: 7791889534279554537, guid: d002a25dd436fd04db4d567f83c7db7b, type: 3}
+  - {fileID: -5106694848068185442, guid: d002a25dd436fd04db4d567f83c7db7b, type: 3}
   EndTurnActions:
   - {fileID: 2120337553009906039, guid: a6791e1b6fa0ebc4c88f9587e50ee419, type: 3}
   Spells: []
   Statuses: []
-  EquippedWeapon: {fileID: 0}
+  EquippedWeapon: {fileID: 2639095456343010396, guid: c86c8b3360035ca448e6bdb038ebc348, type: 3}
+  inShortRest: 0
   StatusEffectStrengthCheckAdvantage: 0
   StatusEffectDexterityCheckAdvantage: 0
   StatusEffectConstitutionCheckAdvantage: 0
@@ -98,6 +98,12 @@ MonoBehaviour:
   StatusEffectSaveBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
   StatusEffectACBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
   StatusEffectDamageBonus: {fileID: -103915310395160897, guid: 6c2eebae08c88744ca008cf258fc69ea, type: 3}
+  HasAction: 0
+  HasBonusAction: 0
+  IsActionSurging: 0
+  HasActionSurge: 0
+  HasSecondWind: 0
+  HasSecondAttack: 0
 --- !u!212 &2120060907297601215
 SpriteRenderer:
   m_ObjectHideFlags: 0

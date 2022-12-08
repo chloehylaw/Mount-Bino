@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class Fighter : Creature
 {
-    public bool IsActionSurging;
-    public bool HasActionSurge;
-    public bool HasSecondWind;
     public bool HasSecondAttack;
-    public override void Act(string action, Creature target)
-    {
 
-    }
-
-    public override void BonusAct(string bonusAction, Creature target)
+    public override void Act(Action action, Creature target)
     {
-    }
-    public override void FreeAct(string freeAction, Creature target)
-    {
-    }
-    public override void EndTurnAct(string endTurnAction, Creature target)
-    {
+        if (IsActionSurging)
+        {
+            IsActionSurging = false;
+        }
+        else
+        {
+            HasAction = false;
+        }
+        action.Use();
     }
 
     public void Attack_Temp(Creature target)
     {
-        this.Actions[0].Use(target);
+        //this.Actions[0].Use(target);
     }
 
     public override void Die()

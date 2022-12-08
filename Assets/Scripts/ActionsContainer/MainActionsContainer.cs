@@ -45,10 +45,13 @@ public class MainActionsContainer : ActionsContainer
 
             foreach (var action in actionsList)
             {
-
                 var tempButton = Instantiate(actionButton, transform);
+                var taction = Instantiate(action, tempButton.transform);
+                taction.gameObject.SetActive(true);
+                taction.sourceCreature = creature;
                 //var tempText = Instantiate(actionText);
-                tempButton.GetComponentInChildren<TextMeshProUGUI>().text = action.Name;
+                tempButton.GetComponentInChildren<TextMeshProUGUI>().text = taction.Name;
+                tempButton.GetComponent<Button>().onClick.AddListener(taction.Use);
                 var something = GetComponent<RectTransform>();
                 something.sizeDelta = new Vector2(something.sizeDelta.x + tempButton.GetComponent<RectTransform>().sizeDelta.x + 25, something.sizeDelta.y);
 

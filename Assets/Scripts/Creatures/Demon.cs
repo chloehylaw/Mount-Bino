@@ -5,19 +5,10 @@ using UnityEngine;
 public class Demon : Creature
 {
 
-    public override void Act(string action, Creature target)
-    {
-
-    }
-
-    public override void BonusAct(string bonusAction, Creature target)
-    {
-    }
-
-
+   
     public void Attack_Temp(Creature target)
     {
-        this.Actions[0].Use(target);
+        //this.Actions[0].Use(target);
     }
 
     public override void Die()
@@ -72,13 +63,5 @@ public class Demon : Creature
         return Intelligence + ProficiencyBonus;
     }
 
-    public override void FreeAct(string bonusAction, Creature target)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void EndTurnAct(string bonusAction, Creature target)
-    {
-        throw new System.NotImplementedException();
-    }
+   
 }

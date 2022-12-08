@@ -59,7 +59,7 @@ public class GameHandler : MonoBehaviour
     {
         Debug.Log(enemies);
         CombatEncounter encounter = Resources.Load<CombatEncounter>(enemies);
-        Enemies.Capacity = encounter.enemies.Count;
+        Enemies = encounter.enemies;
         for(int i = 0; i < encounter.enemies.Count; i++)
         {
             Enemies[i] = Instantiate(encounter.enemies[i], transform);

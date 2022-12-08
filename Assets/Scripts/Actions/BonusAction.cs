@@ -7,7 +7,7 @@ public class BonusAction : Action
 
 
 
-    public override void Use(Creature target)
+    public override void Use()
     {
         throw new System.NotImplementedException();
     }

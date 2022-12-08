@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     public int DamageDiceSize;
     public int DamageDiceAmount;
@@ -32,11 +32,7 @@ public abstract class Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Wielder = GetComponent<Creature>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
