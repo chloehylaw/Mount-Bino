@@ -14,8 +14,8 @@ using UnityEngine;
 
     void Awake()
         {
-        StartCoroutine(StartRestSceneAfterLoad());
-        //StartRest();
+        
+        StartRest();
         }
 
         // Update is called once per frame
@@ -31,12 +31,6 @@ using UnityEngine;
             GameHandler.gameHandler.Cleric.ShortRest();
             GameHandler.gameHandler.Rogue.ShortRest();
             GameHandler.gameHandler.Wizard.ShortRest();
-        }
-
-        public IEnumerator StartRestSceneAfterLoad()
-        {
-            yield return new WaitForSeconds(4);
-            StartRest();
         }
     }
 //}
