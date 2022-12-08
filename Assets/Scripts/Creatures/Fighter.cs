@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Fighter : Creature
 {
-    
+    public bool IsActionSurging;
+    public bool HasActionSurge;
     public override void Act(string action, Creature target)
     {
 
