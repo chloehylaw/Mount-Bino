@@ -60,10 +60,10 @@ public class Cleric : Creature
         
     }
 
-    public override void ShortRest(bool inRestSite)
+    public override void ShortRest()
     {
-        base.ShortRest(inRestSite);
-
-        Debug.Log("S.");
+        base.ShortRest();
+        
+        Debug.Log("Getting some EELing.");
     }
 }

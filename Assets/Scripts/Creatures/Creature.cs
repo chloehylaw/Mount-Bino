@@ -139,7 +139,7 @@ public abstract class Creature : MonoBehaviour
         TakeDamage(heal * (-1));
     }
 
-    public virtual void ShortRest(bool inRestSite)
+    public virtual void ShortRest()
     {
         Debug.Log("The party rest here");
     }
