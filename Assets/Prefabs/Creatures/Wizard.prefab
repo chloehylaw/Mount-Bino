@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1638119758694194337}
   - component: {fileID: -4110469841371846791}
   - component: {fileID: 154565702666006690}
+  - component: {fileID: -8213243615349279214}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -60,8 +61,8 @@ MonoBehaviour:
   IsProficientCharismaSaves: 0
   ArmorClass: 12
   Name: The Wizard
-  MaxHealth: 19
-  CurrentHealth: 19
+  MaxHealth: 25
+  CurrentHealth: 25
   ProficiencyBonus: 3
   Actions:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
@@ -166,3 +167,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-8213243615349279214
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532610486263170287}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.3, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 1.93, y: 2.2, z: 2.53, w: 2.24}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.6, y: 12.8}
+    newSize: {x: 12.8, y: 9.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.18, y: 8.48}
+  m_EdgeRadius: 0

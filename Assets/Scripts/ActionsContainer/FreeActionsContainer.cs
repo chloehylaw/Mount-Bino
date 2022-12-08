@@ -21,6 +21,11 @@ public class FreeActionsContainer : ActionsContainer
 
     public void Initialize(Creature creature)
     {
+        GetComponent<RectTransform>().sizeDelta = new Vector2(0, GetComponent<RectTransform>().sizeDelta.y);
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
         this.enabled = true;
         freeActionsList = creature.FreeActions;
 

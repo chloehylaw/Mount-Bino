@@ -8,10 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4015394946685727727}
+  - component: {fileID: 6142526090231610559}
   - component: {fileID: 1032927421062975991}
   - component: {fileID: -3648840728696769859}
   - component: {fileID: -6132707674964847148}
+  - component: {fileID: -3975344050837854871}
   m_Layer: 0
   m_Name: Cleric
   m_TagString: Untagged
@@ -19,7 +20,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4015394946685727727
+--- !u!4 &6142526090231610559
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Strength: 3
   Dexterity: 1
-  Constitution: 1
+  Constitution: 2
   Intelligence: 0
   Wisdom: 4
   Charisma: -1
@@ -60,8 +61,8 @@ MonoBehaviour:
   IsProficientCharismaSaves: 0
   ArmorClass: 16
   Name: The Cleric
-  MaxHealth: 31
-  CurrentHealth: 31
+  MaxHealth: 36
+  CurrentHealth: 36
   ProficiencyBonus: 3
   Actions:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
@@ -165,3 +166,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-3975344050837854871
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8512252043232371906}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.94, y: 2.17}
+  m_SpriteTilingProperty:
+    border: {x: 1.7099999, y: 4.74, z: 3.46, w: 0.19999999}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.6, y: 12.8}
+    newSize: {x: 9.6, y: 12.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.1, y: 8.77}
+  m_EdgeRadius: 0
