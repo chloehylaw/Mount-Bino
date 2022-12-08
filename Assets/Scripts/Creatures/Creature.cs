@@ -117,6 +117,12 @@ public abstract class Creature : MonoBehaviour
         CurrentHealth -= damage;
         OnTakeDamage?.Invoke(damage);
     }
+
+    public virtual void ShortRest()
+    {
+        // half max hp when doing short rest
+        TakeDamage((MaxHealth / 2)*(-1));
+    }
     public abstract void Act(string action, Creature target);
     public void TickStatuses(int s)
     {

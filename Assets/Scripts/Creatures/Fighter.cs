@@ -20,6 +20,13 @@ public class Fighter : Creature
     {
     }
 
+    public override void ShortRest()
+    {
+        base.ShortRest();
+        // hasActionSurge = true;
+        // hasSecondWind = true;
+    }
+
     public void Attack_Temp(Creature target)
     {
         this.Actions[0].Use(target);

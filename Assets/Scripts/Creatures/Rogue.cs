@@ -20,6 +20,12 @@ public class Rogue : Creature
     public override void EndTurnAct(string endTurnAction, Creature target)
     {
     }
+    public override void ShortRest()
+    {
+        base.ShortRest();
+        // hasActionSurge = true;
+        // hasSecondWind = true;
+    }
     public override void Die()
     {
         throw new System.NotImplementedException();

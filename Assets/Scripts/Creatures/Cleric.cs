@@ -21,7 +21,12 @@ public class Cleric : Creature
     {
     }
 
-
+    public override void ShortRest()
+    {
+        base.ShortRest();
+        // hasActionSurge = true;
+        // hasSecondWind = true;
+    }
     public override void Die()
     {
         throw new System.NotImplementedException();
