@@ -17,10 +17,15 @@ public class CombatButton : MonoBehaviour
         button.interactable = true;
     }
 
-    public void EndTurn()
+    public void SkipCombat()
     {
-        button.interactable = false;
-        //CombatHandler.combatHandler.AdvanceTurn();
+        var temp = FindObjectsOfType<Creature>();
+        foreach(Creature creature in temp)
+        {
+            if (!GameHandler.gameHandler.Party.Contains(creature))
+                Destroy(creature.gameObject);
+        }
+        GameHandler.gameHandler.EnterMapScene();
     }
 
 

@@ -60,8 +60,11 @@ public abstract class Creature : MonoBehaviour
     public DieExpression StatusEffectACBonus;
     public DieExpression StatusEffectDamageBonus;
 
-    public int HasAction;
-    public int HasBonusAction;
+    public bool HasAction;
+    public bool HasBonusAction;
+    public bool IsActionSurging;
+    public bool HasActionSurge;
+    public bool HasSecondWind; 
 
     internal abstract int GetSpellAttackBonus();
 
@@ -86,6 +89,7 @@ public abstract class Creature : MonoBehaviour
         {
             endTurnAction.sourceCreature = this;
         }
+        Instantiate(EquippedWeapon, transform);
     }
     public int GetArmorClass()
     {
@@ -152,7 +156,11 @@ public abstract class Creature : MonoBehaviour
         }
     }
 
-    public abstract void Act(string action, Creature target);
+    public virtual void Act(Action action, Creature target)
+    {
+        HasAction = false;
+        action.Use();
+    }
     public void TickStatuses(int s)
     {
         foreach(var status in Statuses)
@@ -160,13 +168,20 @@ public abstract class Creature : MonoBehaviour
             status.Tick(s);
         }
     }
-    public abstract void BonusAct(string bonusAction, Creature target);
-    public abstract void FreeAct(string bonusAction, Creature target);
+    public virtual void BonusAct(BonusAction bonusAction, Creature target)
+    {
+        HasBonusAction = false;
+        bonusAction.Use();
+    }
+    public virtual void FreeAct(FreeAction freeAction, Creature target) 
+    {
+        freeAction.Use();
+    }
     public void EndTurnAct()
     {
         EndTurn();
     }
-    public void StartTurn()
+    public virtual void StartTurn()
     {
         OnStartTurn?.Invoke();
         //TickStatuses();

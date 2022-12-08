@@ -10,7 +10,7 @@ public class EndTurn : EndTurnAction
     //public EndTurnContainer container;
 
     //public ActionsContainer actionContainer;
-    public override void Use(Creature target)
+    public override void Use()
     {
         FinishTurn();
     }

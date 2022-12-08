@@ -7,27 +7,7 @@ public class Cleric : Creature
     public bool HasChannelDivinity;
     public int MaxSpellPoints;
     public int CurrentSpellPoints;
-    public override void Act(string action, Creature target)
-    {
-        this.Actions[0].Use(target);
-    }
-
-    public override void BonusAct(string bonusAction, Creature target)
-    {
-
-    }
-
-    public override void FreeAct(string freeAction, Creature target)
-    {
-    }
-
-    public override void ShortRest()
-    {
-        base.ShortRest();
-        HasChannelDivinity = true;
-    }
-
-
+   
     public override void Die()
     {
         throw new System.NotImplementedException();
@@ -65,6 +45,10 @@ public class Cleric : Creature
     {
         
     }
-
+    public override void ShortRest()
+    {
+        base.ShortRest();
+        HasChannelDivinity = true;
+    }
     
 }

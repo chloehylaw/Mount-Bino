@@ -4,29 +4,14 @@ using UnityEngine;
 
 public class Dragon : Creature
 {
-    public override void Act(string action, Creature target)
-    {
-        this.Actions[0].Use(target);
-    }
-
-    public override void BonusAct(string bonusAction, Creature target)
-    {
-
-    }
 
     public override void Die()
     {
         throw new System.NotImplementedException();
     }
 
-    
 
     public override void EnterDying()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void FreeAct(string bonusAction, Creature target)
     {
         throw new System.NotImplementedException();
     }
