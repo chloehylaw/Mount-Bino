@@ -17,7 +17,7 @@ namespace RandomEvents
         public void StartEvent (string eventPath)
         {
             Debug.Log(eventPath);
-            currentRandomEvent = (GameObject) Instantiate(Resources.Load(eventPath));
+            currentRandomEvent = (GameObject)Instantiate(Resources.Load(eventPath));
         }
     }
 }
