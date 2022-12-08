@@ -26,6 +26,8 @@ public class Cleric : Creature
         base.ShortRest();
         HasChannelDivinity = true;
     }
+
+
     public override void Die()
     {
         throw new System.NotImplementedException();
