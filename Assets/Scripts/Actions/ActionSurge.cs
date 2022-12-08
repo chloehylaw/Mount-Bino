@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreeAction : Action
+public class ActionSurge : FreeAction
 {
-
+    public new Fighter sourceCreature;
     public override void Use(Creature target)
     {
-        throw new System.NotImplementedException();
+        sourceCreature.IsActionSurging = true;
+        sourceCreature.HasActionSurge = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

@@ -60,6 +60,8 @@ public abstract class Creature : MonoBehaviour
     public DieExpression StatusEffectACBonus;
     public DieExpression StatusEffectDamageBonus;
 
+    public int HasAction;
+    public int HasBonusAction;
 
     internal abstract int GetSpellAttackBonus();
 
@@ -142,7 +144,7 @@ public abstract class Creature : MonoBehaviour
     public virtual void ShortRest()
     {
         Debug.Log("The party rest here");
-        int healing = MaxHealth/2;
+        int healing = MaxHealth / 2;
         Heal(healing);
         if (CurrentHealth > MaxHealth)
         {
@@ -160,7 +162,10 @@ public abstract class Creature : MonoBehaviour
     }
     public abstract void BonusAct(string bonusAction, Creature target);
     public abstract void FreeAct(string bonusAction, Creature target);
-    public abstract void EndTurnAct(string bonusAction, Creature target);
+    public void EndTurnAct()
+    {
+        EndTurn();
+    }
     public void StartTurn()
     {
         OnStartTurn?.Invoke();

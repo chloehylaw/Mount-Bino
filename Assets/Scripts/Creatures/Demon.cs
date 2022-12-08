@@ -77,8 +77,5 @@ public class Demon : Creature
         throw new System.NotImplementedException();
     }
 
-    public override void EndTurnAct(string bonusAction, Creature target)
-    {
-        throw new System.NotImplementedException();
-    }
+    
 }

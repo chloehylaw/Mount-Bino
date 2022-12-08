@@ -62,7 +62,7 @@ MonoBehaviour:
   ArmorClass: 18
   Name: The Fighter
   MaxHealth: 49
-  CurrentHealth: 49
+  CurrentHealth: 10
   ProficiencyBonus: 3
   Actions:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}
@@ -77,6 +77,7 @@ MonoBehaviour:
   Spells: []
   Statuses: []
   EquippedWeapon: {fileID: 0}
+  inShortRest: 0
   StatusEffectStrengthCheckAdvantage: 0
   StatusEffectDexterityCheckAdvantage: 0
   StatusEffectConstitutionCheckAdvantage: 0
@@ -98,6 +99,12 @@ MonoBehaviour:
   StatusEffectSaveBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
   StatusEffectACBonus: {fileID: -2027478497642914562, guid: 23ba4404ceecd4f4a9c1bed9d3674fdf, type: 3}
   StatusEffectDamageBonus: {fileID: -103915310395160897, guid: 6c2eebae08c88744ca008cf258fc69ea, type: 3}
+  HasAction: 0
+  HasBonusAction: 0
+  IsActionSurging: 0
+  HasActionSurge: 0
+  HasSecondWind: 0
+  HasSecondAttack: 0
 --- !u!212 &2120060907297601215
 SpriteRenderer:
   m_ObjectHideFlags: 0

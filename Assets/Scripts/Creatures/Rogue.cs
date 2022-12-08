@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Rogue : Creature
 {
+    public bool HasUncannyDodge;
     public override void Act(string action, Creature target)
     {
         this.Actions[0].Use(target);
@@ -16,9 +17,12 @@ public class Rogue : Creature
     }
     public override void FreeAct(string freeAction, Creature target)
     {
+
     }
-    public override void EndTurnAct(string endTurnAction, Creature target)
+    public override void ShortRest()
     {
+        base.ShortRest();
+        
     }
     public override void Die()
     {
@@ -39,10 +43,17 @@ public class Rogue : Creature
     }
 
    
-    //public override void TakeDamage(int damage)
-    //{
-    //    CurrentHealth -= damage;
-    //}
+    public new void TakeDamage(int damage)
+    {
+        if(HasUncannyDodge)
+        {
+            base.TakeDamage(damage / 2);
+            HasUncannyDodge = false;
+        }
+        else
+            base.TakeDamage(damage);
+
+    }
 
 
     internal override int GetSpellAttackBonus()
