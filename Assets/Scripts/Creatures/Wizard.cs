@@ -22,8 +22,11 @@ public class Wizard : Creature
     public override void ShortRest()
     {
         base.ShortRest();
-        // hasActionSurge = true;
-        // hasSecondWind = true;
+        CurrentSpellPoints += 6;
+        if (CurrentSpellPoints > MaxSpellPoints)
+        {
+            CurrentSpellPoints = MaxSpellPoints;
+        }
     }
     public override void Die()
     {

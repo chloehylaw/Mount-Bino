@@ -24,8 +24,7 @@ public class Cleric : Creature
     public override void ShortRest()
     {
         base.ShortRest();
-        // hasActionSurge = true;
-        // hasSecondWind = true;
+        HasChannelDivinity = true;
     }
     public override void Die()
     {
@@ -65,10 +64,5 @@ public class Cleric : Creature
         
     }
 
-    public override void ShortRest()
-    {
-        base.ShortRest();
-        
-        Debug.Log("Getting some EELing.");
-    }
+    
 }

@@ -6,10 +6,16 @@ using UnityEngine;
     public class RestSceneHandler : MonoBehaviour
     {
         public static RestSceneHandler restSceneHandler;
-        // Start is called before the first frame update
-        void Start()
-        {
+    // Start is called before the first frame update
+    void Start()
+    {
+        restSceneHandler = GetComponent<RestSceneHandler>();
+    }
 
+    void Awake()
+        {
+        StartCoroutine(StartRestSceneAfterLoad());
+        //StartRest();
         }
 
         // Update is called once per frame
@@ -25,6 +31,12 @@ using UnityEngine;
             GameHandler.gameHandler.Cleric.ShortRest();
             GameHandler.gameHandler.Rogue.ShortRest();
             GameHandler.gameHandler.Wizard.ShortRest();
+        }
+
+        public IEnumerator StartRestSceneAfterLoad()
+        {
+            yield return new WaitForSeconds(4);
+            StartRest();
         }
     }
 //}

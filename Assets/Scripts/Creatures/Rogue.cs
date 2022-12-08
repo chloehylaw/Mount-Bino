@@ -22,8 +22,7 @@ public class Rogue : Creature
     public override void ShortRest()
     {
         base.ShortRest();
-        // hasActionSurge = true;
-        // hasSecondWind = true;
+        
     }
     public override void Die()
     {

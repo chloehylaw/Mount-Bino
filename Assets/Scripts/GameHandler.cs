@@ -99,22 +99,22 @@ public class GameHandler : MonoBehaviour
         RandomEventHandler.randomEventHandler.StartEvent(eventPath);
     }
 
-    public void enterRestScene(string eventPath)
-    {
-        Debug.Log(eventPath);
+    //public void enterRestScene(string eventPath)
+    //{
+    //    Debug.Log(eventPath);
 
-        SceneManager.LoadScene("RestSite");
-        StartCoroutine(StartEventAfterRestSceneLoad());
-    }
+    //    SceneManager.LoadScene("RestSite");
+    //    StartCoroutine(StartEventAfterRestSceneLoad());
+    //}
 
-    public IEnumerator StartEventAfterRestSceneLoad()
-    {
-        while (!SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("RestSite")))
-        {
-            yield return null;
-        }
-        RestSceneHandler.restSceneHandler.StartRest();
-    }
+    //public IEnumerator StartEventAfterRestSceneLoad()
+    //{
+    //    while (!SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("RestSite")))
+    //    {
+    //        yield return null;
+    //    }
+    //    RestSceneHandler.restSceneHandler.StartRest();
+    //}
     public void enterRestScene ()
     {
         SceneManager.LoadScene("RestSite");
