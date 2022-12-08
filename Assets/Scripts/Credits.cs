@@ -8,10 +8,13 @@ public class Credits : MonoBehaviour
 {
     public Animator transition;
 
+    [SerializeField] private AudioSource selectSoundEffect;
+
     public float transitionTime = 1f;
 
     public void BackToMenu()
     {
+        selectSoundEffect.Play();
         StartCoroutine(LoadLevel(0));
     }
 
