@@ -98,10 +98,27 @@ public class GameHandler : MonoBehaviour
         }
         RandomEventHandler.randomEventHandler.StartEvent(eventPath);
     }
-    
+
+    //public void enterRestScene(string eventPath)
+    //{
+    //    Debug.Log(eventPath);
+
+    //    SceneManager.LoadScene("RestSite");
+    //    StartCoroutine(StartEventAfterRestSceneLoad());
+    //}
+
+    //public IEnumerator StartEventAfterRestSceneLoad()
+    //{
+    //    while (!SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("RestSite")))
+    //    {
+    //        yield return null;
+    //    }
+    //    RestSceneHandler.restSceneHandler.StartRest();
+    //}
     public void enterRestScene ()
     {
-        SceneManager.LoadScene("RestSite"); 
+        SceneManager.LoadScene("RestSite");
+        //RestSceneHandler.restSceneHandler.StartRest();
     }
 
     // event to stats or map back forth works

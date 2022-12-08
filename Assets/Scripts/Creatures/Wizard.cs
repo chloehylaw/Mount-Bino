@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Wizard : Creature
 {
+    public int MaxSpellPoints;
+    public int CurrentSpellPoints;
     public override void Act(string action, Creature target)
     {
         this.Actions[0].Use(target);
@@ -16,10 +18,16 @@ public class Wizard : Creature
     public override void FreeAct(string freeAction, Creature target)
     {
     }
-    public override void EndTurnAct(string endTurnAction, Creature target)
-    {
-    }
 
+    public override void ShortRest()
+    {
+        base.ShortRest();
+        CurrentSpellPoints += 6;
+        if (CurrentSpellPoints > MaxSpellPoints)
+        {
+            CurrentSpellPoints = MaxSpellPoints;
+        }
+    }
     public override void Die()
     {
         throw new System.NotImplementedException();
@@ -35,22 +43,9 @@ public class Wizard : Creature
         return Dexterity;
     }
 
-
-    //public override void TakeDamage(int damage)
-    //{
-    //    CurrentHealth -= damage;
-    //}
-
     internal override int GetSpellAttackBonus()
     {
         return Intelligence + ProficiencyBonus;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-   
 }
