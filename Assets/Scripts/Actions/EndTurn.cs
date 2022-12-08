@@ -12,20 +12,15 @@ public class EndTurn : EndTurnAction
     //public ActionsContainer actionContainer;
     public override void Use(Creature target)
     {
-        throw new System.NotImplementedException();
+        FinishTurn();
     }
 
     // Start is called before the first frame update
-    void Awake()
-    {
-        //button = container.GetComponent<Button>();
-        //button.onClick.AddListener(FinishTurn);
-    }
+
 
     public void FinishTurn()
     {
-        CombatHandler.combatHandler.AdvanceTurn();
-        //actionContainer.enabled = false;
+        sourceCreature.EndTurn();
     }
 
 
