@@ -21,7 +21,11 @@ public class Cleric : Creature
     {
     }
 
-
+    public override void ShortRest()
+    {
+        base.ShortRest();
+        HasChannelDivinity = true;
+    }
     public override void Die()
     {
         throw new System.NotImplementedException();
@@ -60,10 +64,5 @@ public class Cleric : Creature
         
     }
 
-    public override void ShortRest()
-    {
-        base.ShortRest();
-        
-        Debug.Log("Getting some EELing.");
-    }
+    
 }

@@ -19,8 +19,13 @@ public class Fighter : Creature
     public override void FreeAct(string freeAction, Creature target)
     {
     }
-    public override void EndTurnAct(string endTurnAction, Creature target)
+    
+
+    public override void ShortRest()
     {
+        base.ShortRest();
+        HasActionSurge = true;
+        HasSecondWind = true;
     }
 
     public void Attack_Temp(Creature target)
