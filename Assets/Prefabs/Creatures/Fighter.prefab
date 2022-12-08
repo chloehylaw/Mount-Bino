@@ -62,7 +62,7 @@ MonoBehaviour:
   ArmorClass: 18
   Name: The Fighter
   MaxHealth: 49
-  CurrentHealth: 10
+  CurrentHealth: 49
   ProficiencyBonus: 3
   Actions:
   - {fileID: 4093166264676127690, guid: b0b7137cc548f9f45b64d2cc92b9db0b, type: 3}

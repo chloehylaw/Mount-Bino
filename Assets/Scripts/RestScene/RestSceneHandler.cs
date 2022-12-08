@@ -7,10 +7,10 @@ using UnityEngine;
     {
         public static RestSceneHandler restSceneHandler;
     // Start is called before the first frame update
-    void Start()
-    {
-        restSceneHandler = GetComponent<RestSceneHandler>();
-    }
+    //void Start()
+    //{
+    //    restSceneHandler = GetComponent<RestSceneHandler>();
+    //}
 
     void Awake()
         {
