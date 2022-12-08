@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2277169239070161113}
   - component: {fileID: 6308041747113753767}
   - component: {fileID: 4415288995882416862}
+  - component: {fileID: -6930745328631753041}
   m_Layer: 0
   m_Name: Rogue
   m_TagString: Untagged
@@ -165,3 +166,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &-6930745328631753041
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7046298521371801831}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.45, y: -0.6}
+  m_SpriteTilingProperty:
+    border: {x: 2.8799999, y: 2.32, z: 1.93, w: 3.5}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.6, y: 12.8}
+    newSize: {x: 9.6, y: 12.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 7.02}
+  m_EdgeRadius: 0

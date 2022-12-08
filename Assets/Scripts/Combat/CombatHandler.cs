@@ -31,13 +31,14 @@ public class CombatHandler : MonoBehaviour
     {
         foreach (Creature p in Party)
         {
-            Friendlies[Party.IndexOf(p)].creature = Instantiate(p, Friendlies[Party.IndexOf(p)].transform);
+            Friendlies[Party.IndexOf(p)].creature = Instantiate(p);
+            Friendlies[Party.IndexOf(p)].creature.gameObject.transform.position = Friendlies[Party.IndexOf(p)].transform.position;
             Friendlies[Party.IndexOf(p)].gameObject.SetActive(true);
             CreatureUI[Party.IndexOf(p)].button.onClick.AddListener(Friendlies[Party.IndexOf(p)].creature.EndTurn);
             Friendlies[Party.IndexOf(p)].creature.OnStartTurn += (CreatureUI[Party.IndexOf(p)].StartTurn);
             Friendlies[Party.IndexOf(p)].creature.OnEndTurn += AdvanceTurn;
             Friendlies[Party.IndexOf(p)].creature.GetComponent<SpriteRenderer>().enabled = true;
-            Friendlies[Party.IndexOf(p)].creature.transform.localScale = new Vector3(38,38,1);
+            Friendlies[Party.IndexOf(p)].creature.transform.localScale = new Vector3(0.3f,0.3f,1);
             var temp = Instantiate(healthBar, Friendlies[Party.IndexOf(p)].transform);
             temp.transform.Translate(new Vector2(0, 0));
             temp.creature = p;
@@ -45,13 +46,14 @@ public class CombatHandler : MonoBehaviour
 
         foreach (Creature p in Enemies)
         {
-            this.Enemies[Enemies.IndexOf(p)].creature = Instantiate(p, this.Enemies[Enemies.IndexOf(p)].transform);
+            this.Enemies[Enemies.IndexOf(p)].creature = Instantiate(p);
+            this.Enemies[Enemies.IndexOf(p)].creature.gameObject.transform.position = this.Enemies[Enemies.IndexOf(p)].transform.position;
             this.Enemies[Enemies.IndexOf(p)].gameObject.SetActive(true);
             CreatureUI[Enemies.IndexOf(p)+4].button.onClick.AddListener(this.Enemies[Enemies.IndexOf(p)].creature.EndTurn);
             this.Enemies[Enemies.IndexOf(p)].creature.OnStartTurn  += (CreatureUI[Enemies.IndexOf(p)+4].StartTurn);
             this.Enemies[Enemies.IndexOf(p)].creature.OnEndTurn += AdvanceTurn;
             this.Enemies[Enemies.IndexOf(p)].creature.GetComponent<SpriteRenderer>().enabled = true;
-            this.Enemies[Enemies.IndexOf(p)].creature.transform.localScale = new Vector3(38, 38, 1);
+            this.Enemies[Enemies.IndexOf(p)].creature.transform.localScale = new Vector3(0.3f, 0.3f, 1);
             var temp = Instantiate(healthBar, this.Enemies[Enemies.IndexOf(p)].transform);
             temp.transform.Translate(new Vector2(0, 0));
             temp.creature = p;
@@ -65,12 +67,6 @@ public class CombatHandler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
-        ticker++;
-        if (ticker % 100 == 0)
-            Debug.Log((int)new DieExpression("3d10+4-5d8-3-4+1d6"));
-    }
 
     public void AdvanceTurn()
     {

@@ -28,6 +28,8 @@ public class ActionsContainer : MonoBehaviour
 
     public void Initialize()
     {
+        GetComponent<RectTransform>().sizeDelta = new Vector2(0, GetComponent<RectTransform>().sizeDelta.y);
+
         actionsContainer = new List<ActionsContainer>(GetComponentsInChildren<ActionsContainer>());
         width = 0;
         foreach (var a in actionsContainer)
